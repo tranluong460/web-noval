@@ -243,7 +243,13 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Truyện hoàn thành</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-              {[...completedStories, ...stories.slice(0, 4)].slice(0, 7).map((story) => (
+              {(() => {
+                const combinedStories = [...completedStories, ...stories.slice(0, 4)];
+                const uniqueStories = combinedStories.filter((story, index, arr) => 
+                  arr.findIndex(s => s.id === story.id) === index
+                );
+                return uniqueStories.slice(0, 7);
+              })().map((story) => (
                 <StoryCard key={story.id} story={story} size="sm" />
               ))}
             </div>
