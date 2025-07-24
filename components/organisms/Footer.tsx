@@ -1,7 +1,5 @@
 'use client';
 
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import { BookOpen, Facebook, Twitter, Instagram, Youtube, ArrowUp } from 'lucide-react';
