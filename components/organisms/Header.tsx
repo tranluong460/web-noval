@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { SearchModal } from '@/components/organisms/SearchModal';
 import { Button } from '@/components/atoms/Button';
 import { Input } from '@/components/atoms/Input';
 import { Badge } from '@/components/atoms/Badge';
@@ -22,7 +23,7 @@ import {
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [language, setLanguage] = useState('VN');
 
@@ -88,7 +89,7 @@ export const Header: React.FC = () => {
             {/* Search Icon (Mobile) */}
             <button
               className="md:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
-              onClick={() => setIsSearchOpen(true)}
+              onClick={() => setIsSearchModalOpen(true)}
             >
               <Search className="w-5 h-5" />
             </button>
@@ -141,21 +142,11 @@ export const Header: React.FC = () => {
           </div>
         )}
 
-        {/* Mobile Search Modal */}
-        {isSearchOpen && (
-          <div className="md:hidden fixed inset-0 bg-white z-50 p-4">
-            <div className="flex items-center space-x-4 mb-4">
-              <Input
-                placeholder="Tìm kiếm truyện, tác giả..."
-                icon={<Search className="w-4 h-4 text-gray-400" />}
-                autoFocus
-              />
-              <Button variant="ghost" onClick={() => setIsSearchOpen(false)}>
-                <X className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
-        )}
+        {/* Search Modal */}
+        <SearchModal 
+          isOpen={isSearchModalOpen} 
+          onClose={() => setIsSearchModalOpen(false)} 
+        />
       </div>
     </header>
   );
