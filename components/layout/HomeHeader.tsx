@@ -8,6 +8,7 @@ export default function HomeHeader() {
     const [isDropdownLoading, setIsDropdownLoading] = useState<string | null>(null);
     const [isLoggedIn, setIsLoggedIn] = useState(true); // Thay đổi thành true để test
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+    const [notificationDropdownOpen, setNotificationDropdownOpen] = useState(false);
 
     // Mock user data - thay thế bằng data thật từ context/store
     const userData = {
@@ -17,6 +18,115 @@ export default function HomeHeader() {
         role: 'user', // 'user', 'author', 'admin'
         notifications: 3
     };
+
+    // Mock notifications data
+    const notifications = [
+        {
+            id: 1,
+            type: 'new_chapter',
+            title: 'Chương mới',
+            message: 'Truyện "Thiên Long Bát Bộ" có chương mới: Chương 125 - Quyết chiến Thiên Sơn',
+            time: '5 phút trước',
+            read: false,
+            avatar: null,
+            link: '/truyen/thien-long-bat-bo/chuong/125'
+        },
+        {
+            id: 2,
+            type: 'comment_reply',
+            title: 'Phản hồi bình luận',
+            message: 'Tác giả Kim Dung đã phản hồi bình luận của bạn trong truyện "Thần Điêu Đại Hiệp"',
+            time: '1 giờ trước',
+            read: false,
+            avatar: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=2',
+            link: '/truyen/than-dieu-dai-hiep#comment-123'
+        },
+        {
+            id: 3,
+            type: 'follow',
+            title: 'Người theo dõi mới',
+            message: 'Nguyễn Văn B đã bắt đầu theo dõi bạn',
+            time: '2 giờ trước',
+            read: true,
+            avatar: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=32&h=32&dpr=2',
+            link: '/user/nguyen-van-b'
+        },
+        {
+            id: 4,
+            type: 'like',
+            title: 'Lượt thích',
+            message: '15 người đã thích bình luận của bạn trong "Anh Hùng Xạ Điêu"',
+            time: '3 giờ trước',
+            read: true,
+            avatar: null,
+            link: '/truyen/anh-hung-xa-dieu#comment-456'
+        },
+        {
+            id: 5,
+            type: 'system',
+            title: 'Thông báo hệ thống',
+            message: 'Hệ thống sẽ bảo trì từ 2:00 - 4:00 sáng ngày mai',
+            time: '1 ngày trước',
+            read: true,
+            avatar: null,
+            link: '/thong-bao/bao-tri'
+        }
+    ];
+
+    const getNotificationIcon = (type: string) => {
+        switch (type) {
+            case 'new_chapter':
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                );
+            case 'comment_reply':
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                );
+            case 'follow':
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                );
+            case 'like':
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                );
+            case 'system':
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-gray-500 to-slate-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                );
+            default:
+                return (
+                    <div className="w-8 h-8 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full flex items-center justify-center">
+                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5z" />
+                        </svg>
+                    </div>
+                );
+        }
+    };
+
+    const unreadCount = notifications.filter(n => !n.read).length;
 
     const getInitials = (name: string) => {
         return name.split(' ').map(n => n[0]).join('').toUpperCase();
@@ -135,17 +245,122 @@ export default function HomeHeader() {
                             /* User Info - Desktop */
                             <div className="hidden md:flex items-center space-x-3">
                                 {/* Notifications */}
-                                <button className="relative p-2 text-slate-600 hover:text-slate-700 hover:bg-sky-100/60 rounded-lg transition-all duration-200">
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM10.07 2.82l3.93 3.93-3.93 3.93-3.93-3.93 3.93-3.93zM15 17h5l-5 5v-5z" />
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
-                                    </svg>
-                                    {userData.notifications > 0 && (
-                                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                                            {userData.notifications}
-                                        </span>
+                                <div className="relative">
+                                    <button 
+                                        onClick={() => setNotificationDropdownOpen(!notificationDropdownOpen)}
+                                        className="relative p-2 text-slate-600 hover:text-slate-700 hover:bg-sky-100/60 rounded-lg transition-all duration-200"
+                                    >
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.73 21a2 2 0 01-3.46 0" />
+                                        </svg>
+                                        {unreadCount > 0 && (
+                                            <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium animate-pulse">
+                                                {unreadCount}
+                                            </span>
+                                        )}
+                                    </button>
+
+                                    {/* Notifications Dropdown */}
+                                    {notificationDropdownOpen && (
+                                        <div className="absolute right-0 top-full mt-2 w-80 bg-white rounded-xl shadow-xl border border-sky-200/60 z-50 overflow-hidden">
+                                            {/* Header */}
+                                            <div className="p-4 bg-gradient-to-r from-sky-50 to-cyan-50 border-b border-sky-200/40">
+                                                <div className="flex items-center justify-between">
+                                                    <h3 className="font-semibold text-slate-700 flex items-center">
+                                                        <svg className="w-5 h-5 mr-2 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                                        </svg>
+                                                        Thông báo
+                                                    </h3>
+                                                    <div className="flex items-center space-x-2">
+                                                        {unreadCount > 0 && (
+                                                            <button className="text-xs text-cyan-600 hover:text-cyan-700 font-medium">
+                                                                Đánh dấu đã đọc
+                                                            </button>
+                                                        )}
+                                                        <button 
+                                                            onClick={() => setNotificationDropdownOpen(false)}
+                                                            className="p-1 hover:bg-sky-100/60 rounded-md transition-colors duration-200"
+                                                        >
+                                                            <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Notifications List */}
+                                            <div className="max-h-96 overflow-y-auto">
+                                                {notifications.length > 0 ? (
+                                                    notifications.map((notification) => (
+                                                        <div 
+                                                            key={notification.id}
+                                                            className={`p-4 border-b border-sky-100/60 hover:bg-sky-50/60 transition-all duration-200 cursor-pointer ${
+                                                                !notification.read ? 'bg-cyan-50/40' : ''
+                                                            }`}
+                                                        >
+                                                            <div className="flex items-start space-x-3">
+                                                                {/* Icon or Avatar */}
+                                                                <div className="flex-shrink-0">
+                                                                    {notification.avatar ? (
+                                                                        <img 
+                                                                            src={notification.avatar} 
+                                                                            alt="" 
+                                                                            className="w-8 h-8 rounded-full object-cover"
+                                                                        />
+                                                                    ) : (
+                                                                        getNotificationIcon(notification.type)
+                                                                    )}
+                                                                </div>
+
+                                                                {/* Content */}
+                                                                <div className="flex-1 min-w-0">
+                                                                    <div className="flex items-center justify-between mb-1">
+                                                                        <h4 className="text-sm font-medium text-slate-700">
+                                                                            {notification.title}
+                                                                        </h4>
+                                                                        {!notification.read && (
+                                                                            <div className="w-2 h-2 bg-cyan-500 rounded-full flex-shrink-0"></div>
+                                                                        )}
+                                                                    </div>
+                                                                    <p className="text-sm text-slate-600 mb-2 line-clamp-2">
+                                                                        {notification.message}
+                                                                    </p>
+                                                                    <div className="flex items-center justify-between">
+                                                                        <span className="text-xs text-slate-400">
+                                                                            {notification.time}
+                                                                        </span>
+                                                                        <button className="text-xs text-cyan-600 hover:text-cyan-700 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                                                                            Xem
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                ) : (
+                                                    <div className="p-8 text-center">
+                                                        <svg className="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                                        </svg>
+                                                        <p className="text-slate-500 text-sm">Không có thông báo nào</p>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            {/* Footer */}
+                                            {notifications.length > 0 && (
+                                                <div className="p-3 bg-gradient-to-r from-sky-50/60 to-cyan-50/60 border-t border-sky-200/40">
+                                                    <button className="w-full text-center text-sm text-cyan-600 hover:text-cyan-700 font-medium py-1 hover:bg-sky-100/60 rounded-md transition-all duration-200">
+                                                        Xem tất cả thông báo
+                                                    </button>
+                                                </div>
+                                            )}
+                                        </div>
                                     )}
-                                </button>
+                                </div>
 
                                 {/* User Dropdown */}
                                 <div className="relative">
@@ -442,9 +657,10 @@ export default function HomeHeader() {
                                             <div className="relative">
                                                 <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.73 21a2 2 0 01-3.46 0" />
                                                 </svg>
-                                                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
-                                                    {userData.notifications}
+                                                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium animate-pulse">
+                                                    {unreadCount}
                                                 </span>
                                             </div>
                                         )}
