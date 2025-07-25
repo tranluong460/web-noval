@@ -291,7 +291,7 @@ export default function HomeHeader() {
                     <div className="pt-3 pb-4 sm:pb-6 border-t border-sky-200/40">
                         <div className="flex items-center px-3 sm:px-4 space-x-2 sm:space-x-3">
                             <Link
-                                href="/auth/dang-nhap"
+                                href="/auth"
                                 className="flex-1 text-center px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md"
                             >
                                 Đăng nhập
