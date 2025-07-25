@@ -180,7 +180,7 @@ export default function HomeHeader() {
                                         </svg>
                                         <span className="absolute -bottom-3 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-yellow-300 group-hover:w-full transition-all duration-300 shadow-sm"></span>
                                     </button>
-                                    <div className={`absolute top-full left-0 mt-2 ${
+                                    <div className={`absolute top-full left-0 mt-4 ${
                                         navItem.title === 'Thể loại' 
                                             ? 'w-[90vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem]' 
                                             : 'w-40'
