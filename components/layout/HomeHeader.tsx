@@ -120,7 +120,7 @@ export default function HomeHeader() {
                                     </button>
                                     <div className={`absolute top-full left-0 mt-2 ${
                                         navItem.title === 'Thể loại' 
-                                            ? 'w-[90vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem]' 
+                                            ? 'w-[90vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem]' 
                                             : 'w-40 sm:w-48'
                                     } bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0`}>
                                         
@@ -130,6 +130,7 @@ export default function HomeHeader() {
                                                     <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
                                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-4">
+                                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
                                                     {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
                                                             <div className="h-4 bg-gray-200 rounded"></div>
@@ -140,7 +141,7 @@ export default function HomeHeader() {
                                         ) : (
                                             <div className={`${
                                                 navItem.title === 'Thể loại' 
-                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-3 sm:p-6' 
+                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 p-3 sm:p-6' 
                                                     : 'py-2'
                                             }`}>
                                                 {navItem.items?.map((item, itemIndex) => (
