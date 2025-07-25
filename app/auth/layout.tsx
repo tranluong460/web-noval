@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     description: "Auth",
 };
 
-export default function AuthrLayout({
+export default function AuthLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
