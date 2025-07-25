@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isDropdownLoading, setIsDropdownLoading] = useState<string | null>(null);
 
     const navLinks = [
         {
@@ -70,24 +71,47 @@ export default function HomeHeader() {
                                 </Link>
                             ) : (
                                 <div key={index} className="relative group">
-                                    <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors flex items-center">
+                                    <button 
+                                        className="text-gray-700 hover:text-blue-600 font-medium transition-colors flex items-center"
+                                        onMouseEnter={() => {
+                                            if (navItem.title === 'Thể loại') {
+                                                setIsDropdownLoading('the-loai');
+                                                setTimeout(() => setIsDropdownLoading(null), 800);
+                                            }
+                                        }}
+                                    >
                                         {navItem.title}
                                         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
                                     <div className={`absolute top-full left-0 mt-2 ${navItem.title === 'Thể loại' ? 'w-64' : 'w-48'} bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200`}>
-                                        <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-4' : 'p-2'}`}>
-                                            {navItem.items?.map((item, itemIndex) => (
-                                                <Link 
-                                                    key={itemIndex}
-                                                    href={item.href} 
-                                                    className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-600 hover:text-blue-600 py-1' : 'block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded'}`}
-                                                >
-                                                    {item.title}
-                                                </Link>
-                                            ))}
-                                        </div>
+                                        {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
+                                            <div className="p-4">
+                                                <div className="grid grid-cols-2 gap-2">
+                                                    {[...Array(6)].map((_, skeletonIndex) => (
+                                                        <div key={skeletonIndex} className="animate-pulse">
+                                                            <div className="h-4 bg-gray-200 rounded py-1"></div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                <div className="flex justify-center mt-3">
+                                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-4' : 'p-2'}`}>
+                                                {navItem.items?.map((item, itemIndex) => (
+                                                    <Link 
+                                                        key={itemIndex}
+                                                        href={item.href} 
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-600 hover:text-blue-600 py-1 transition-colors' : 'block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-colors'}`}
+                                                    >
+                                                        {item.title}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             )
