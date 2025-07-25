@@ -7,6 +7,42 @@ export default function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
+    const navLinks = [
+        {
+            title: 'Truyện',
+            href: '/truyen',
+            type: 'link'
+        },
+        {
+            title: 'Thể loại',
+            href: '/truyen/the-loai',
+            type: 'dropdown',
+            items: [
+                { title: 'Tiên hiệp', href: '/truyen/the-loai/tien-hiep' },
+                { title: 'Ngôn tình', href: '/truyen/the-loai/ngon-tinh' },
+                { title: 'Đô thị', href: '/truyen/the-loai/do-thi' },
+                { title: 'Kiếm hiệp', href: '/truyen/the-loai/kiem-hiep' },
+                { title: 'Quan trường', href: '/truyen/the-loai/quan-truong' },
+                { title: 'Linh dị', href: '/truyen/the-loai/linh-di' }
+            ]
+        },
+        {
+            title: 'Bảng xếp hạng',
+            href: '/top',
+            type: 'dropdown',
+            items: [
+                { title: 'Top tuần', href: '/top/tuan' },
+                { title: 'Top tháng', href: '/top/thang' },
+                { title: 'Top năm', href: '/top/nam' }
+            ]
+        },
+        {
+            title: 'Tác giả',
+            href: '/tac-gia',
+            type: 'link'
+        }
+    ];
+
     return (
         <header className="bg-white shadow-lg sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,63 +59,39 @@ export default function HomeHeader() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
-                        <Link href="/truyen" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-                            Truyện
-                        </Link>
-                        <div className="relative group">
-                            <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors flex items-center">
-                                Thể loại
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <div className="grid grid-cols-2 gap-2 p-4">
-                                    <Link href="/truyen/the-loai/tien-hiep" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Tiên hiệp
-                                    </Link>
-                                    <Link href="/truyen/the-loai/ngon-tinh" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Ngôn tình
-                                    </Link>
-                                    <Link href="/truyen/the-loai/do-thi" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Đô thị
-                                    </Link>
-                                    <Link href="/truyen/the-loai/kiem-hiep" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Kiếm hiệp
-                                    </Link>
-                                    <Link href="/truyen/the-loai/quan-truong" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Quan trường
-                                    </Link>
-                                    <Link href="/truyen/the-loai/linh-di" className="text-sm text-gray-600 hover:text-blue-600 py-1">
-                                        Linh dị
-                                    </Link>
+                        {navLinks.map((navItem, index) => (
+                            navItem.type === 'link' ? (
+                                <Link 
+                                    key={index}
+                                    href={navItem.href} 
+                                    className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                                >
+                                    {navItem.title}
+                                </Link>
+                            ) : (
+                                <div key={index} className="relative group">
+                                    <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors flex items-center">
+                                        {navItem.title}
+                                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+                                    <div className={`absolute top-full left-0 mt-2 ${navItem.title === 'Thể loại' ? 'w-64' : 'w-48'} bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200`}>
+                                        <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-4' : 'p-2'}`}>
+                                            {navItem.items?.map((item, itemIndex) => (
+                                                <Link 
+                                                    key={itemIndex}
+                                                    href={item.href} 
+                                                    className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-600 hover:text-blue-600 py-1' : 'block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded'}`}
+                                                >
+                                                    {item.title}
+                                                </Link>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="relative group">
-                            <button className="text-gray-700 hover:text-blue-600 font-medium transition-colors flex items-center">
-                                Bảng xếp hạng
-                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
-                            <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                                <div className="p-2">
-                                    <Link href="/top/tuan" className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded">
-                                        Top tuần
-                                    </Link>
-                                    <Link href="/top/thang" className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded">
-                                        Top tháng
-                                    </Link>
-                                    <Link href="/top/nam" className="block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded">
-                                        Top năm
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <Link href="/tac-gia" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-                            Tác giả
-                        </Link>
+                            )
+                        ))}
                     </nav>
 
                     {/* Search and Auth */}
@@ -148,30 +160,15 @@ export default function HomeHeader() {
                 {isMenuOpen && (
                     <div className="md:hidden border-t border-gray-200">
                         <div className="px-2 pt-2 pb-3 space-y-1">
-                            <Link
-                                href="/truyen"
-                                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                            >
-                                Truyện
-                            </Link>
-                            <Link
-                                href="/truyen/the-loai"
-                                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                            >
-                                Thể loại
-                            </Link>
-                            <Link
-                                href="/top"
-                                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                            >
-                                Bảng xếp hạng
-                            </Link>
-                            <Link
-                                href="/tac-gia"
-                                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
-                            >
-                                Tác giả
-                            </Link>
+                            {navLinks.map((navItem, index) => (
+                                <Link
+                                    key={index}
+                                    href={navItem.href}
+                                    className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md"
+                                >
+                                    {navItem.title}
+                                </Link>
+                            ))}
                         </div>
                         <div className="pt-4 pb-3 border-t border-gray-200">
                             <div className="flex items-center px-5 space-x-3">
