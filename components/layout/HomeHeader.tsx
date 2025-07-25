@@ -120,16 +120,16 @@ export default function HomeHeader() {
                                     </button>
                                     <div className={`absolute top-full left-0 mt-2 ${
                                         navItem.title === 'Thể loại' 
-                                            ? 'w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem]' 
-                                            : 'w-48'
+                                            ? 'w-[90vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem]' 
+                                            : 'w-40 sm:w-48'
                                     } bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0`}>
                                         
                                         {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
-                                            <div className="p-6">
+                                            <div className="p-3 sm:p-6">
                                                 <div className="flex items-center justify-center mb-4">
                                                     <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
-                                                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+                                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-4">
                                                     {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
                                                             <div className="h-4 bg-gray-200 rounded"></div>
@@ -140,7 +140,7 @@ export default function HomeHeader() {
                                         ) : (
                                             <div className={`${
                                                 navItem.title === 'Thể loại' 
-                                                    ? 'grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-6' 
+                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-3 sm:p-6' 
                                                     : 'py-2'
                                             }`}>
                                                 {navItem.items?.map((item, itemIndex) => (
@@ -149,8 +149,8 @@ export default function HomeHeader() {
                                                         href={item.href} 
                                                         className={`${
                                                             navItem.title === 'Thể loại' 
-                                                                ? 'text-sm text-slate-700 hover:text-blue-600 py-3 px-4 rounded-md hover:bg-slate-100 transition-all duration-200 block font-medium text-center hover:shadow-sm' 
-                                                                : 'block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-all duration-200 font-medium whitespace-nowrap'
+                                                                ? 'text-xs sm:text-sm text-slate-700 hover:text-blue-600 py-2 px-2 sm:py-3 sm:px-4 rounded-md hover:bg-slate-100 transition-all duration-200 block font-medium text-center hover:shadow-sm' 
+                                                                : 'block px-3 sm:px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-all duration-200 font-medium whitespace-nowrap'
                                                         }`}
                                                     >
                                                         {item.title}
