@@ -23,9 +23,6 @@ export default function HomeHeader() {
 
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center space-x-8">
-                        <Link href="/" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
-                            Trang chủ
-                        </Link>
                         <Link href="/truyen" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
                             Truyện
                         </Link>
