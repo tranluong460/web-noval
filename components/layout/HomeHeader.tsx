@@ -127,8 +127,8 @@ export default function HomeHeader() {
                                                 <div className="flex items-center justify-center mb-4">
                                                     <div className="w-8 h-8 border-4 border-teal-400 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
-                                                <div className="grid grid-cols-2 gap-3">
-                                                    {[...Array(6)].map((_, skeletonIndex) => (
+                                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                                                    {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
                                                             <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded-md"></div>
                                                         </div>
@@ -136,12 +136,12 @@ export default function HomeHeader() {
                                                 </div>
                                             </div>
                                         ) : (
-                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-6' : 'p-4'}`}>
+                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-6' : 'p-4'}`}>
                                                 {navItem.items?.map((item, itemIndex) => (
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-700 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-gray-50 transition-all duration-300 block font-medium border border-transparent hover:border-gray-200' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-700 hover:text-blue-600 py-2.5 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300 block font-medium border border-transparent hover:border-blue-200 text-center' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
                                                     >
                                                         {item.title}
                                                     </Link>
