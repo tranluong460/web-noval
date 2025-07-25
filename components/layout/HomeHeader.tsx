@@ -129,7 +129,6 @@ export default function HomeHeader() {
                                                 <div className="flex items-center justify-center mb-4">
                                                     <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
-                                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 sm:gap-4">
                                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
                                                     {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
@@ -141,7 +140,7 @@ export default function HomeHeader() {
                                         ) : (
                                             <div className={`${
                                                 navItem.title === 'Thể loại' 
-                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 p-3 sm:p-6' 
+                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 p-3 sm:p-6' 
                                                     : 'py-2'
                                             }`}>
                                                 {navItem.items?.map((item, itemIndex) => (
@@ -187,7 +186,7 @@ export default function HomeHeader() {
                             </Link>
                             <Link
                                 href="/auth/dang-ky"
-                                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 border border-blue-600 hover:border-blue-700 rounded-md transition-all duration-200 shadow-sm hover:shadow-md"
+                                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-all duration-200 shadow-sm hover:shadow-md"
                             >
                                 Đăng ký
                             </Link>
@@ -251,7 +250,7 @@ export default function HomeHeader() {
                                 </Link>
                                 <Link
                                     href="/auth/dang-ky"
-                                    className="flex-1 text-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 border border-blue-600 rounded-md transition-all duration-200"
+                                    className="flex-1 text-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-all duration-200"
                                 >
                                     Đăng ký
                                 </Link>
