@@ -43,7 +43,6 @@ export default function HomeHeader() {
                 { title: 'Thể Thao', href: '/truyen/the-loai/the-thao' },
                 { title: 'Game', href: '/truyen/the-loai/game' },
                 { title: 'Light Novel', href: '/truyen/the-loai/light-novel' },
-              
             ]
         },
         {
