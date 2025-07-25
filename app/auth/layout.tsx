@@ -12,8 +12,8 @@ export default function AuthrLayout({
     children: React.ReactNode;
 }>) {
     return (
-            <div className="flex min-h-screen">
-                {children}
-            </div>
+        <div className="flex min-h-screen">
+            {children}
+        </div>
     );
 }
