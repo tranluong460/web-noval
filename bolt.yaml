@@ -3,6 +3,3 @@ pipeline:
     type: git
     repo: https://github.com/tranluong460/web-noval
     branch: main
-  steps:
-    - name: Pull latest code
-      run: git pull origin main
