@@ -42,16 +42,6 @@ export default function HomeHeader() {
                 { title: 'Ma Pháp', href: '/truyen/the-loai/ma-phap' },
                 { title: 'Thể Thao', href: '/truyen/the-loai/the-thao' },
                 { title: 'Game', href: '/truyen/the-loai/game' },
-                { title: 'Light Novel', href: '/truyen/the-loai/light-novel' },                { title: 'Lịch Sử', href: '/truyen/the-loai/lich-su' },
-                { title: 'Hài Hước', href: '/truyen/the-loai/hai-huoc' },
-                { title: 'Đam Mỹ', href: '/truyen/the-loai/dam-my' },
-                { title: 'Bách Hợp', href: '/truyen/the-loai/bach-hop' },
-                { title: 'Cổ Đại', href: '/truyen/the-loai/co-dai' },
-                { title: 'Hiện Đại', href: '/truyen/the-loai/hien-dai' },
-                { title: 'Mạt Thế', href: '/truyen/the-loai/mat-the' },
-                { title: 'Ma Pháp', href: '/truyen/the-loai/ma-phap' },
-                { title: 'Thể Thao', href: '/truyen/the-loai/the-thao' },
-                { title: 'Game', href: '/truyen/the-loai/game' },
                 { title: 'Light Novel', href: '/truyen/the-loai/light-novel' },
               
             ]
