@@ -103,13 +103,13 @@ export default function HomeHeader() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
-                                    <div className={`absolute top-full left-0 mt-2 ${navItem.title === 'Thể loại' ? 'w-64' : 'w-48'} bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200`}>
+                                    <div className={`absolute top-full left-0 mt-2 ${navItem.title === 'Thể loại' ? 'w-64' : 'w-48'} bg-white rounded-lg shadow-2xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0`}>
                                         {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
                                             <div className="p-4">
                                                 <div className="grid grid-cols-2 gap-2">
                                                     {[...Array(6)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
-                                                            <div className="h-4 bg-gray-200 rounded py-1"></div>
+                                                            <div className="h-4 bg-gray-200 rounded-md"></div>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -120,7 +120,7 @@ export default function HomeHeader() {
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-600 hover:text-blue-600 py-1 transition-colors' : 'block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded transition-colors'}`}
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-600 hover:text-blue-600 py-1.5 px-2 rounded-md hover:bg-blue-50 transition-all duration-200 block' : 'block px-3 py-2 text-sm text-gray-600 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-all duration-200'}`}
                                                     >
                                                         {item.title}
                                                     </Link>
