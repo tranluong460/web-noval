@@ -10,53 +10,53 @@ export default function HomeHeader() {
 
     const navLinks = [
         {
-            title: '藏書閣',
+            title: 'Truyện',
             href: '/truyen',
             type: 'link'
         },
         {
-            title: '門派分類',
+            title: 'Thể loại',
             href: '/truyen/the-loai',
             type: 'dropdown',
             items: [
-                { title: '仙俠奇緣', href: '/truyen/the-loai/tien-hiep' },
-                { title: '情緣紅塵', href: '/truyen/the-loai/ngon-tinh' },
-                { title: '都市修仙', href: '/truyen/the-loai/do-thi' },
-                { title: '劍道無雙', href: '/truyen/the-loai/kiem-hiep' },
-                { title: '朝堂風雲', href: '/truyen/the-loai/quan-truong' },
-                { title: '靈異鬼怪', href: '/truyen/the-loai/linh-di' },
-                { title: '玄幻世界', href: '/truyen/the-loai/huyen-huyen' },
-                { title: '科幻未來', href: '/truyen/the-loai/khoa-huyen' },
-                { title: '系統流派', href: '/truyen/the-loai/he-thong' },
-                { title: '重生歸來', href: '/truyen/the-loai/trong-sinh' },
-                { title: '穿越時空', href: '/truyen/the-loai/xuyen-khong' },
-                { title: '推理懸疑', href: '/truyen/the-loai/trinh-tham' },
-                { title: '軍事戰爭', href: '/truyen/the-loai/quan-su' },
-                { title: '歷史傳奇', href: '/truyen/the-loai/lich-su' },
-                { title: '輕鬆幽默', href: '/truyen/the-loai/hai-huoc' },
-                { title: '耽美情深', href: '/truyen/the-loai/dam-my' },
-                { title: '百合花開', href: '/truyen/the-loai/bach-hop' },
-                { title: '古代傳說', href: '/truyen/the-loai/co-dai' },
-                { title: '現代都市', href: '/truyen/the-loai/hien-dai' },
-                { title: '末世求生', href: '/truyen/the-loai/mat-the' },
-                { title: '魔法奇幻', href: '/truyen/the-loai/ma-phap' },
-                { title: '競技體育', href: '/truyen/the-loai/the-thao' },
-                { title: '遊戲世界', href: '/truyen/the-loai/game' },
-                { title: '輕小說', href: '/truyen/the-loai/light-novel' }  
+                { title: 'Tiên Hiệp', href: '/truyen/the-loai/tien-hiep' },
+                { title: 'Ngôn Tình', href: '/truyen/the-loai/ngon-tinh' },
+                { title: 'Đô Thị', href: '/truyen/the-loai/do-thi' },
+                { title: 'Kiếm Hiệp', href: '/truyen/the-loai/kiem-hiep' },
+                { title: 'Quan Trường', href: '/truyen/the-loai/quan-truong' },
+                { title: 'Linh Dị', href: '/truyen/the-loai/linh-di' },
+                { title: 'Huyền Huyễn', href: '/truyen/the-loai/huyen-huyen' },
+                { title: 'Khoa Huyễn', href: '/truyen/the-loai/khoa-huyen' },
+                { title: 'Hệ Thống', href: '/truyen/the-loai/he-thong' },
+                { title: 'Trọng Sinh', href: '/truyen/the-loai/trong-sinh' },
+                { title: 'Xuyên Không', href: '/truyen/the-loai/xuyen-khong' },
+                { title: 'Trinh Thám', href: '/truyen/the-loai/trinh-tham' },
+                { title: 'Quân Sự', href: '/truyen/the-loai/quan-su' },
+                { title: 'Lịch Sử', href: '/truyen/the-loai/lich-su' },
+                { title: 'Hài Hước', href: '/truyen/the-loai/hai-huoc' },
+                { title: 'Đam Mỹ', href: '/truyen/the-loai/dam-my' },
+                { title: 'Bách Hợp', href: '/truyen/the-loai/bach-hop' },
+                { title: 'Cổ Đại', href: '/truyen/the-loai/co-dai' },
+                { title: 'Hiện Đại', href: '/truyen/the-loai/hien-dai' },
+                { title: 'Mạt Thế', href: '/truyen/the-loai/mat-the' },
+                { title: 'Ma Pháp', href: '/truyen/the-loai/ma-phap' },
+                { title: 'Thể Thao', href: '/truyen/the-loai/the-thao' },
+                { title: 'Game', href: '/truyen/the-loai/game' },
+                { title: 'Light Novel', href: '/truyen/the-loai/light-novel' }  
             ]
         },
         {
-            title: '天榜排名',
+            title: 'Bảng xếp hạng',
             href: '/top',
             type: 'dropdown',
             items: [
-                { title: '週榜', href: '/top/tuan' },
-                { title: '月榜', href: '/top/thang' },
-                { title: '年榜', href: '/top/nam' }
+                { title: 'Tuần', href: '/top/tuan' },
+                { title: 'Tháng', href: '/top/thang' },
+                { title: 'Năm', href: '/top/nam' }
             ]
         },
         {
-            title: '文人墨客',
+            title: 'Tác giả',
             href: '/tac-gia',
             type: 'link'
         }
@@ -74,16 +74,16 @@ export default function HomeHeader() {
                         <Link href="/" className="flex items-center space-x-3 group">
                             <div className="relative">
                                 <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300">
-                                    <span className="text-white font-bold text-lg font-serif">書</span>
+                                    <span className="text-white font-bold text-lg font-serif">T</span>
                                 </div>
                                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-br from-teal-300 to-teal-400 rounded-full animate-pulse"></div>
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-2xl font-bold text-gray-900 font-serif tracking-wide">
-                                    仙書閣
+                                    Truyện Hay
                                 </span>
                                 <span className="text-xs text-gray-700 font-medium tracking-widest">
-                                    XIAN SHU GE
+                                    TRUYEN HAY
                                 </span>
                             </div>
                         </Link>
@@ -106,7 +106,7 @@ export default function HomeHeader() {
                                     <button 
                                         className="relative text-gray-900 hover:text-blue-600 font-medium transition-all duration-300 flex items-center font-serif text-lg group"
                                         onMouseEnter={() => {
-                                            if (navItem.title === '門派分類') {
+                                            if (navItem.title === 'Thể loại') {
                                                 setIsDropdownLoading('the-loai');
                                                 setTimeout(() => setIsDropdownLoading(null), 800);
                                             }
@@ -122,7 +122,7 @@ export default function HomeHeader() {
                                         {/* Decorative top */}
                                         <div className="h-2 bg-gradient-to-r from-teal-400 to-blue-500 rounded-t-xl"></div>
                                         
-                                        {navItem.title === '門派分類' && isDropdownLoading === 'the-loai' ? (
+                                        {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
                                             <div className="p-6">
                                                 <div className="flex items-center justify-center mb-4">
                                                     <div className="w-8 h-8 border-4 border-teal-400 border-t-transparent rounded-full animate-spin"></div>
@@ -136,12 +136,12 @@ export default function HomeHeader() {
                                                 </div>
                                             </div>
                                         ) : (
-                                            <div className={`${navItem.title === '門派分類' ? 'grid grid-cols-2 gap-2 p-6' : 'p-4'}`}>
+                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-6' : 'p-4'}`}>
                                                 {navItem.items?.map((item, itemIndex) => (
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === '門派分類' ? 'text-sm text-gray-700 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-gray-50 transition-all duration-300 block font-medium border border-transparent hover:border-gray-200' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-700 hover:text-blue-600 py-2 px-3 rounded-lg hover:bg-gray-50 transition-all duration-300 block font-medium border border-transparent hover:border-gray-200' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
                                                     >
                                                         {item.title}
                                                     </Link>
@@ -175,13 +175,13 @@ export default function HomeHeader() {
                                 href="/auth/dang-nhap"
                                 className="px-6 py-2 text-sm font-medium text-white hover:text-gray-100 transition-all duration-300 border-2 border-white hover:border-gray-200 rounded-full font-serif bg-blue-500 hover:bg-blue-600"
                             >
-                                登入
+                                Đăng nhập
                             </Link>
                             <Link
                                 href="/auth/dang-ky"
                                 className="px-6 py-2 text-sm font-medium text-white bg-teal-400 hover:bg-teal-500 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
                             >
-                                註冊
+                                Đăng ký
                             </Link>
                         </div>
 
@@ -207,7 +207,7 @@ export default function HomeHeader() {
                         <div className="relative">
                             <input
                                 type="text"
-                                placeholder="尋找仙緣奇書、文人墨客..."
+                                placeholder="Tìm kiếm truyện, tác giả..."
                                 className="w-full px-6 py-4 pl-14 pr-6 text-gray-900 bg-white border-2 border-gray-200 rounded-full focus:outline-none focus:ring-4 focus:ring-teal-200 focus:border-teal-400 transition-all duration-300 font-serif placeholder-gray-500"
                             />
                             <div className="absolute inset-y-0 left-0 flex items-center pl-6">
@@ -239,13 +239,13 @@ export default function HomeHeader() {
                                     href="/auth/dang-nhap"
                                     className="flex-1 text-center px-4 py-3 text-sm font-medium text-white bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300 font-serif"
                                 >
-                                    登入
+                                    Đăng nhập
                                 </Link>
                                 <Link
                                     href="/auth/dang-ky"
                                     className="flex-1 text-center px-4 py-3 text-sm font-medium text-white bg-teal-400 hover:bg-teal-500 rounded-full transition-all duration-300 shadow-lg font-serif"
                                 >
-                                    註冊
+                                    Đăng ký
                                 </Link>
                             </div>
                         </div>
