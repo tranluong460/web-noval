@@ -182,7 +182,7 @@ export default function HomeHeader() {
                                     </button>
                                     <div className={`absolute top-full left-0 mt-4.5 ${
                                         navItem.title === 'Thể loại' 
-                                            ? 'w-[90vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem]' 
+                                            ? 'w-[100vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem]' 
                                             : 'w-40'
                                     } bg-gradient-to-br from-white/95 via-sky-25 to-white/95 rounded-xl shadow-xl border border-sky-200/60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0 backdrop-blur-lg`}>
                                         
