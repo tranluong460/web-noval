@@ -1,9 +1,11 @@
 'use client';
 
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
-export default function Home({ searchParams }: { searchParams: { [key: string]: string | string[] | undefined } }) {
+export default function Home() {
+    const searchParams = useSearchParams();
     const [currentSlide, setCurrentSlide] = useState(0);
 
     // Mock data
