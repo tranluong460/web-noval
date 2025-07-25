@@ -24,7 +24,25 @@ export default function HomeHeader() {
                 { title: 'Đô thị', href: '/truyen/the-loai/do-thi' },
                 { title: 'Kiếm hiệp', href: '/truyen/the-loai/kiem-hiep' },
                 { title: 'Quan trường', href: '/truyen/the-loai/quan-truong' },
-                { title: 'Linh dị', href: '/truyen/the-loai/linh-di' }
+                { title: 'Linh dị', href: '/truyen/the-loai/linh-di' },
+               { title: 'Huyền huyễn', href: '/truyen/the-loai/huyen-huyen' },
+                { title: 'Khoa huyễn', href: '/truyen/the-loai/khoa-huyen' },
+                { title: 'Hệ thống', href: '/truyen/the-loai/he-thong' },
+                { title: 'Trọng sinh', href: '/truyen/the-loai/trong-sinh' },
+                { title: 'Xuyên không', href: '/truyen/the-loai/xuyen-khong' },
+                { title: 'Trinh thám', href: '/truyen/the-loai/trinh-tham' },
+                { title: 'Quân sự', href: '/truyen/the-loai/quan-su' },
+                { title: 'Lịch sử', href: '/truyen/the-loai/lich-su' },
+                { title: 'Hài hước', href: '/truyen/the-loai/hai-huoc' },
+                { title: 'Đam mỹ', href: '/truyen/the-loai/dam-my' },
+                { title: 'Bách hợp', href: '/truyen/the-loai/bach-hop' },
+                { title: 'Cổ đại', href: '/truyen/the-loai/co-dai' },
+                { title: 'Hiện đại', href: '/truyen/the-loai/hien-dai' },
+                { title: 'Mạt thế', href: '/truyen/the-loai/mat-the' },
+                { title: 'Ma pháp', href: '/truyen/the-loai/ma-phap' },
+                { title: 'Thể thao', href: '/truyen/the-loai/the-thao' },
+                { title: 'Game', href: '/truyen/the-loai/game' },
+                { title: 'Light Novel', href: '/truyen/the-loai/light-novel' }  
             ]
         },
         {
