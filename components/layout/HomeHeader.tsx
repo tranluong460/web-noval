@@ -119,7 +119,7 @@ export default function HomeHeader() {
                         {/* Auth Buttons - Desktop */}
                         <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
                             <Link
-                                href="/auth/dang-nhap"
+                                href="/auth"
                                 className="px-3 py-2 lg:px-5 lg:py-2.5 text-xs lg:text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 border border-yellow-300/50"
                             >
                                 Đăng nhập
