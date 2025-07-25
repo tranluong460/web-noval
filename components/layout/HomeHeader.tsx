@@ -182,8 +182,8 @@ export default function HomeHeader() {
                                     </button>
                                     <div className={`absolute top-full left-0 mt-4.5 ${
                                         navItem.title === 'Thể loại' 
-                                            ? 'w-[120vw] max-w-sm sm:w-[28rem] md:w-[36rem] lg:w-[42rem]' 
-                                            : 'w-40'
+                                            ? 'w-[90vw] max-w-4xl sm:w-[32rem] md:w-[48rem] lg:w-[56rem] xl:w-[64rem]' 
+                                            : 'w-48'
                                     } bg-gradient-to-br from-white/95 via-sky-25 to-white/95 rounded-xl shadow-xl border border-sky-200/60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0 backdrop-blur-lg`}>
                                         
                                         {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
@@ -194,7 +194,7 @@ export default function HomeHeader() {
                                                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
                                                     {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
-                                                            <div className="h-4 bg-sky-100 rounded"></div>
+                                                            <div className="h-5 bg-sky-100 rounded-md"></div>
                                                         </div>
                                                     ))}
                                                 </div>
@@ -202,7 +202,7 @@ export default function HomeHeader() {
                                         ) : (
                                             <div className={`${
                                                 navItem.title === 'Thể loại' 
-                                                    ? 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 p-3 sm:p-6' 
+                                                    ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3 sm:gap-4 p-4 sm:p-6' 
                                                     : 'py-2'
                                             }`}>
                                                 {navItem.items?.map((item, itemIndex) => (
@@ -211,7 +211,7 @@ export default function HomeHeader() {
                                                         href={item.href} 
                                                         className={`${
                                                             navItem.title === 'Thể loại' 
-                                                                ? 'text-xs sm:text-sm text-slate-600 hover:text-slate-700 py-2 px-2 sm:py-3 sm:px-4 rounded-lg hover:bg-sky-50/80 transition-all duration-300 block font-medium text-center hover:shadow-md border border-transparent hover:border-sky-200/60' 
+                                                                ? 'text-xs sm:text-sm text-slate-600 hover:text-slate-700 py-2.5 px-3 sm:py-3 sm:px-4 rounded-lg hover:bg-sky-50/80 transition-all duration-300 block font-medium text-center hover:shadow-md border border-transparent hover:border-sky-200/60 whitespace-nowrap' 
                                                                 : 'block px-3 py-2.5 text-sm text-slate-600 hover:text-slate-700 hover:bg-sky-50/80 transition-all duration-300 font-medium whitespace-nowrap rounded-md'
                                                         }`}
                                                     >
