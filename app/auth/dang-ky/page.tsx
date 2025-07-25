@@ -220,7 +220,7 @@ export default function DangKy() {
                 <div className="text-center">
                     <p className="text-sm text-slate-600">
                         Đã có tài khoản?{' '}
-                        <a href="/auth/dang-nhap" className="font-medium text-cyan-600 hover:text-cyan-500 transition-colors duration-200">
+                        <a href="/auth" className="font-medium text-cyan-600 hover:text-cyan-500 transition-colors duration-200">
                             Đăng nhập ngay
                         </a>
                     </p>
