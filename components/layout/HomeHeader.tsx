@@ -118,7 +118,11 @@ export default function HomeHeader() {
                                         </svg>
                                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-200"></span>
                                     </button>
-                                    <div className={`absolute top-full left-0 mt-2 w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem] bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0`}>
+                                    <div className={`absolute top-full left-0 mt-2 ${
+                                        navItem.title === 'Thể loại' 
+                                            ? 'w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem]' 
+                                            : 'w-48'
+                                    } bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[60] transform translate-y-2 group-hover:translate-y-0`}>
                                         
                                         {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
                                             <div className="p-6">
@@ -134,12 +138,20 @@ export default function HomeHeader() {
                                                 </div>
                                             </div>
                                         ) : (
-                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-6' : 'p-3'}`}>
+                                            <div className={`${
+                                                navItem.title === 'Thể loại' 
+                                                    ? 'grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 p-6' 
+                                                    : 'py-2'
+                                            }`}>
                                                 {navItem.items?.map((item, itemIndex) => (
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-slate-700 hover:text-blue-600 py-3 px-4 rounded-md hover:bg-slate-100 transition-all duration-200 block font-medium text-center hover:shadow-sm' : 'block px-3 py-2 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-all duration-200 font-medium'}`}
+                                                        className={`${
+                                                            navItem.title === 'Thể loại' 
+                                                                ? 'text-sm text-slate-700 hover:text-blue-600 py-3 px-4 rounded-md hover:bg-slate-100 transition-all duration-200 block font-medium text-center hover:shadow-sm' 
+                                                                : 'block px-4 py-2.5 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100 transition-all duration-200 font-medium whitespace-nowrap'
+                                                        }`}
                                                     >
                                                         {item.title}
                                                     </Link>
