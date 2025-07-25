@@ -6,7 +6,7 @@ import { useState } from 'react';
 export default function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownLoading, setIsDropdownLoading] = useState<string | null>(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Thay đổi thành true để test
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // Thay đổi thành true để test
     const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
     // Mock user data - thay thế bằng data thật từ context/store
