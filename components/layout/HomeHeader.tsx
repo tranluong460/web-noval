@@ -71,15 +71,18 @@ export default function HomeHeader() {
                     <div className="flex-shrink-0">
                         <Link href="/" className="flex items-center space-x-3 group">
                             <div className="relative">
-                                <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center shadow-md transform group-hover:scale-105 transition-all duration-200">
-                                    <span className="text-white font-bold text-lg">T</span>
+                                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-all duration-200 relative overflow-hidden">
+                                    <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                                    <svg className="w-6 h-6 text-white relative z-10" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                    </svg>
                                 </div>
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold text-slate-800 tracking-tight">
                                     Truyện Hay
                                 </span>
-                                <span className="text-xs text-slate-500 font-medium">
+                                <span className="text-xs text-slate-500 font-medium opacity-70" style={{ fontSize: '0.75rem' }}>
                                     Đọc truyện online
                                 </span>
                             </div>
@@ -136,7 +139,7 @@ export default function HomeHeader() {
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-slate-700 hover:text-blue-600 py-3 px-4 rounded-md hover:bg-blue-50 transition-all duration-200 block font-medium text-center hover:shadow-sm' : 'block px-3 py-2 text-sm text-slate-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-all duration-200 font-medium'}`}
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-slate-700 hover:text-blue-600 py-3 px-4 rounded-md hover:bg-slate-100 transition-all duration-200 block font-medium text-center hover:shadow-sm' : 'block px-3 py-2 text-sm text-slate-700 hover:text-blue-600 hover:bg-slate-100 rounded-md transition-all duration-200 font-medium'}`}
                                                     >
                                                         {item.title}
                                                     </Link>
@@ -171,7 +174,7 @@ export default function HomeHeader() {
                             </Link>
                             <Link
                                 href="/auth/dang-ky"
-                                className="px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-300 rounded-md transition-all duration-200"
+                                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 border border-blue-600 hover:border-blue-700 rounded-md transition-all duration-200 shadow-sm hover:shadow-md"
                             >
                                 Đăng ký
                             </Link>
@@ -235,7 +238,7 @@ export default function HomeHeader() {
                                 </Link>
                                 <Link
                                     href="/auth/dang-ky"
-                                    className="flex-1 text-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-md transition-all duration-200"
+                                    className="flex-1 text-center px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 border border-blue-600 rounded-md transition-all duration-200"
                                 >
                                     Đăng ký
                                 </Link>
