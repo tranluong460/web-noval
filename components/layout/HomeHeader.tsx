@@ -95,9 +95,6 @@ export default function HomeHeader() {
                                                         </div>
                                                     ))}
                                                 </div>
-                                                <div className="flex justify-center mt-3">
-                                                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
-                                                </div>
                                             </div>
                                         ) : (
                                             <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 gap-2 p-4' : 'p-2'}`}>
