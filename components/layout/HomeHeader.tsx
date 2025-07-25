@@ -118,30 +118,30 @@ export default function HomeHeader() {
                                         </svg>
                                         <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-500 group-hover:w-full transition-all duration-300"></span>
                                     </button>
-                                    <div className={`absolute top-full left-0 mt-4 ${navItem.title === '門派分類' ? 'w-80' : 'w-56'} bg-white rounded-xl shadow-2xl border-2 border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-[60] transform translate-y-4 group-hover:translate-y-0 backdrop-blur-sm`}>
+                                    <div className={`absolute top-full left-0 mt-4 w-[28rem] md:w-[36rem] lg:w-[42rem] xl:w-[48rem] bg-white rounded-xl shadow-2xl border-2 border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-[60] transform translate-y-4 group-hover:translate-y-0 backdrop-blur-sm`}>
                                         {/* Decorative top */}
                                         <div className="h-2 bg-gradient-to-r from-teal-400 to-blue-500 rounded-t-xl"></div>
                                         
                                         {navItem.title === 'Thể loại' && isDropdownLoading === 'the-loai' ? (
-                                            <div className="p-6">
+                                            <div className="p-8">
                                                 <div className="flex items-center justify-center mb-4">
                                                     <div className="w-8 h-8 border-4 border-teal-400 border-t-transparent rounded-full animate-spin"></div>
                                                 </div>
-                                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                                                <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                                                     {[...Array(12)].map((_, skeletonIndex) => (
                                                         <div key={skeletonIndex} className="animate-pulse">
-                                                            <div className="h-4 bg-gradient-to-r from-gray-200 to-gray-300 rounded-md"></div>
+                                                            <div className="h-5 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg"></div>
                                                         </div>
                                                     ))}
                                                 </div>
                                             </div>
                                         ) : (
-                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 p-6' : 'p-4'}`}>
+                                            <div className={`${navItem.title === 'Thể loại' ? 'grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 p-8' : 'p-4'}`}>
                                                 {navItem.items?.map((item, itemIndex) => (
                                                     <Link 
                                                         key={itemIndex}
                                                         href={item.href} 
-                                                        className={`${navItem.title === 'Thể loại' ? 'text-sm text-gray-700 hover:text-blue-600 py-2.5 px-3 rounded-lg hover:bg-blue-50 transition-all duration-300 block font-medium border border-transparent hover:border-blue-200 text-center' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
+                                                        className={`${navItem.title === 'Thể loại' ? 'text-base text-gray-700 hover:text-blue-600 py-3 px-4 rounded-lg hover:bg-blue-50 transition-all duration-300 block font-medium border border-transparent hover:border-blue-200 text-center hover:shadow-md transform hover:scale-105' : 'block px-4 py-3 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-all duration-300 font-medium'}`}
                                                     >
                                                         {item.title}
                                                     </Link>
