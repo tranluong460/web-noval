@@ -80,11 +80,11 @@ export default function HomeHeader() {
                                     </svg>
                                 </div>
                             </div>
-                            <div className="hidden xs:flex flex-col">
+                            <div className="flex flex-col">
                                 <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-blue-600 via-cyan-600 to-blue-600 bg-clip-text text-transparent tracking-wide">
                                     Hào Hiệp Lâu
                                 </span>
-                                <span className="hidden sm:block text-xs text-slate-500/90 font-medium" style={{ fontSize: '0.75rem' }}>
+                                <span className="text-xs text-slate-500/90 font-medium" style={{ fontSize: '0.75rem' }}>
                                     Giang hồ tự do, hiệp nghĩa vô song
                                 </span>
                             </div>
