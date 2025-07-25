@@ -6,6 +6,21 @@ import { useState } from 'react';
 export default function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isDropdownLoading, setIsDropdownLoading] = useState<string | null>(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Thay đổi thành true để test
+    const [userDropdownOpen, setUserDropdownOpen] = useState(false);
+
+    // Mock user data - thay thế bằng data thật từ context/store
+    const userData = {
+        name: 'Nguyễn Văn A',
+        email: 'nguyenvana@email.com',
+        avatar: null, // URL ảnh hoặc null
+        role: 'user', // 'user', 'author', 'admin'
+        notifications: 3
+    };
+
+    const getInitials = (name: string) => {
+        return name.split(' ').map(n => n[0]).join('').toUpperCase();
+    };
 
     const navLinks = [
         {
@@ -107,7 +122,7 @@ export default function HomeHeader() {
                         </div>
                     </div>
 
-                    {/* Auth + Mobile Menu */}
+                    {/* User Info / Auth + Mobile Menu */}
                     <div className="flex items-center space-x-2 sm:space-x-4">
                         {/* Search Button - Mobile */}
                         <button className="lg:hidden p-1.5 sm:p-2 text-sky-500 hover:text-sky-600 transition-all duration-200 hover:bg-sky-100/60 rounded-md">
@@ -116,21 +131,138 @@ export default function HomeHeader() {
                             </svg>
                         </button>
 
-                        {/* Auth Buttons - Desktop */}
-                        <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
-                            <Link
-                                href="/auth"
-                                className="px-3 py-2 lg:px-5 lg:py-2.5 text-xs lg:text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 border border-yellow-300/50"
-                            >
-                                Đăng nhập
-                            </Link>
-                            <Link
-                                href="/auth/dang-ky"
-                                className="px-3 py-2 lg:px-5 lg:py-2.5 text-xs lg:text-sm font-medium text-slate-600 bg-white/90 hover:bg-sky-100/70 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border border-sky-200/60 hover:border-sky-300/70 backdrop-blur-sm"
-                            >
-                                Đăng ký
-                            </Link>
-                        </div>
+                        {isLoggedIn ? (
+                            /* User Info - Desktop */
+                            <div className="hidden md:flex items-center space-x-3">
+                                {/* Notifications */}
+                                <button className="relative p-2 text-slate-600 hover:text-slate-700 hover:bg-sky-100/60 rounded-lg transition-all duration-200">
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM10.07 2.82l3.93 3.93-3.93 3.93-3.93-3.93 3.93-3.93zM15 17h5l-5 5v-5z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                    </svg>
+                                    {userData.notifications > 0 && (
+                                        <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                                            {userData.notifications}
+                                        </span>
+                                    )}
+                                </button>
+
+                                {/* User Dropdown */}
+                                <div className="relative">
+                                    <button
+                                        onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                                        className="flex items-center space-x-2 p-1 hover:bg-sky-100/60 rounded-lg transition-all duration-200"
+                                    >
+                                        {/* Avatar */}
+                                        <div className="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-medium text-sm shadow-md">
+                                            {userData.avatar ? (
+                                                <img src={userData.avatar} alt={userData.name} className="w-full h-full rounded-full object-cover" />
+                                            ) : (
+                                                getInitials(userData.name)
+                                            )}
+                                        </div>
+                                        
+                                        {/* User Info */}
+                                        <div className="hidden lg:block text-left">
+                                            <div className="text-sm font-medium text-slate-700">{userData.name}</div>
+                                            <div className="text-xs text-slate-500 capitalize">{userData.role}</div>
+                                        </div>
+
+                                        {/* Dropdown Arrow */}
+                                        <svg className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${userDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    {/* Dropdown Menu */}
+                                    {userDropdownOpen && (
+                                        <div className="absolute right-0 top-full mt-2 w-64 bg-white rounded-xl shadow-xl border border-sky-200/60 z-50 overflow-hidden">
+                                            {/* User Info Header */}
+                                            <div className="p-4 bg-gradient-to-r from-sky-50 to-cyan-50 border-b border-sky-200/40">
+                                                <div className="flex items-center space-x-3">
+                                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-medium shadow-md">
+                                                        {userData.avatar ? (
+                                                            <img src={userData.avatar} alt={userData.name} className="w-full h-full rounded-full object-cover" />
+                                                        ) : (
+                                                            getInitials(userData.name)
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <div className="font-medium text-slate-700">{userData.name}</div>
+                                                        <div className="text-sm text-slate-500">{userData.email}</div>
+                                                        <div className="text-xs text-cyan-600 capitalize font-medium">{userData.role}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Menu Items */}
+                                            <div className="py-2">
+                                                {userData.role === 'admin' && (
+                                                    <Link href="/admin" className="flex items-center px-4 py-2.5 text-sm text-slate-600 hover:text-slate-700 hover:bg-sky-50 transition-all duration-200">
+                                                        <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                                        </svg>
+                                                        Quản trị
+                                                    </Link>
+                                                )}
+                                                
+                                                {userData.role === 'author' && (
+                                                    <Link href="/author" className="flex items-center px-4 py-2.5 text-sm text-slate-600 hover:text-slate-700 hover:bg-sky-50 transition-all duration-200">
+                                                        <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                        </svg>
+                                                        Tác giả
+                                                    </Link>
+                                                )}
+
+                                                <Link href="/user" className="flex items-center px-4 py-2.5 text-sm text-slate-600 hover:text-slate-700 hover:bg-sky-50 transition-all duration-200">
+                                                    <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                    </svg>
+                                                    Trang cá nhân
+                                                </Link>
+
+                                                <Link href="/user/profile" className="flex items-center px-4 py-2.5 text-sm text-slate-600 hover:text-slate-700 hover:bg-sky-50 transition-all duration-200">
+                                                    <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                    </svg>
+                                                    Cài đặt
+                                                </Link>
+
+                                                <div className="border-t border-sky-200/40 my-2"></div>
+
+                                                <button 
+                                                    onClick={() => setIsLoggedIn(false)}
+                                                    className="flex items-center w-full px-4 py-2.5 text-sm text-red-600 hover:text-red-700 hover:bg-red-50 transition-all duration-200"
+                                                >
+                                                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                                    </svg>
+                                                    Đăng xuất
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        ) : (
+                            /* Auth Buttons - Desktop */
+                            <div className="hidden md:flex items-center space-x-2 lg:space-x-3">
+                                <Link
+                                    href="/auth"
+                                    className="px-3 py-2 lg:px-5 lg:py-2.5 text-xs lg:text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-105 border border-yellow-300/50"
+                                >
+                                    Đăng nhập
+                                </Link>
+                                <Link
+                                    href="/auth/dang-ky"
+                                    className="px-3 py-2 lg:px-5 lg:py-2.5 text-xs lg:text-sm font-medium text-slate-600 bg-white/90 hover:bg-sky-100/70 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border border-sky-200/60 hover:border-sky-300/70 backdrop-blur-sm"
+                                >
+                                    Đăng ký
+                                </Link>
+                            </div>
+                        )}
 
                         {/* Mobile Menu Button */}
                         <button
@@ -287,23 +419,103 @@ export default function HomeHeader() {
                         )}
                     </div>
 
-                    {/* Mobile Auth */}
-                    <div className="pt-3 pb-4 sm:pb-6 border-t border-sky-200/40">
-                        <div className="flex items-center px-3 sm:px-4 space-x-2 sm:space-x-3">
-                            <Link
-                                href="/auth"
-                                className="flex-1 text-center px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md"
-                            >
-                                Đăng nhập
-                            </Link>
-                            <Link
-                                href="/auth/dang-ky"
-                                className="flex-1 text-center px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-medium text-slate-600 bg-white/90 hover:bg-sky-100/80 rounded-lg transition-all duration-300 shadow-md border border-sky-200/60"
-                            >
-                                Đăng ký
-                            </Link>
+                    {/* Mobile User Info / Auth */}
+                    {isLoggedIn ? (
+                        <div className="pt-3 pb-4 sm:pb-6 border-t border-sky-200/40">
+                            {/* User Info Card */}
+                            <div className="px-3 sm:px-4 mb-4">
+                                <div className="bg-gradient-to-r from-sky-50 to-cyan-50 rounded-lg p-4 border border-sky-200/40">
+                                    <div className="flex items-center space-x-3 mb-3">
+                                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white font-medium shadow-md">
+                                            {userData.avatar ? (
+                                                <img src={userData.avatar} alt={userData.name} className="w-full h-full rounded-full object-cover" />
+                                            ) : (
+                                                getInitials(userData.name)
+                                            )}
+                                        </div>
+                                        <div className="flex-1">
+                                            <div className="font-medium text-slate-700">{userData.name}</div>
+                                            <div className="text-sm text-slate-500">{userData.email}</div>
+                                            <div className="text-xs text-cyan-600 capitalize font-medium">{userData.role}</div>
+                                        </div>
+                                        {userData.notifications > 0 && (
+                                            <div className="relative">
+                                                <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9z" />
+                                                </svg>
+                                                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-medium">
+                                                    {userData.notifications}
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* User Menu Items */}
+                            <div className="px-3 sm:px-4 space-y-1">
+                                {userData.role === 'admin' && (
+                                    <Link href="/admin" className="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-700 hover:bg-sky-100/80 rounded-lg transition-all duration-300">
+                                        <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                                        </svg>
+                                        Quản trị
+                                    </Link>
+                                )}
+                                
+                                {userData.role === 'author' && (
+                                    <Link href="/author" className="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-700 hover:bg-sky-100/80 rounded-lg transition-all duration-300">
+                                        <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                        </svg>
+                                        Tác giả
+                                    </Link>
+                                )}
+
+                                <Link href="/user" className="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-700 hover:bg-sky-100/80 rounded-lg transition-all duration-300">
+                                    <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                    </svg>
+                                    Trang cá nhân
+                                </Link>
+
+                                <Link href="/user/profile" className="flex items-center px-3 py-2.5 text-sm font-medium text-slate-600 hover:text-slate-700 hover:bg-sky-100/80 rounded-lg transition-all duration-300">
+                                    <svg className="w-4 h-4 mr-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    Cài đặt
+                                </Link>
+
+                                <button 
+                                    onClick={() => setIsLoggedIn(false)}
+                                    className="flex items-center w-full px-3 py-2.5 text-sm font-medium text-red-600 hover:text-red-700 hover:bg-red-50 rounded-lg transition-all duration-300"
+                                >
+                                    <svg className="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                    </svg>
+                                    Đăng xuất
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="pt-3 pb-4 sm:pb-6 border-t border-sky-200/40">
+                            <div className="flex items-center px-3 sm:px-4 space-x-2 sm:space-x-3">
+                                <Link
+                                    href="/auth"
+                                    className="flex-1 text-center px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-medium text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 rounded-lg transition-all duration-300 shadow-md"
+                                >
+                                    Đăng nhập
+                                </Link>
+                                <Link
+                                    href="/auth/dang-ky"
+                                    className="flex-1 text-center px-3 py-2.5 sm:px-4 sm:py-3 text-sm font-medium text-slate-600 bg-white/90 hover:bg-sky-100/80 rounded-lg transition-all duration-300 shadow-md border border-sky-200/60"
+                                >
+                                    Đăng ký
+                                </Link>
+                            </div>
+                        </div>
+                    )}
                 </div>
             )}
         </header>
