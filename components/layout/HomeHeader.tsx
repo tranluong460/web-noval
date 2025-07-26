@@ -16,14 +16,14 @@ export default function HomeHeader() {
     }, []);
 
     const genres = [
-        { name: 'Tu Tiên', slug: 'tu-tien', icon: '⚡', color: 'from-cyan-500 to-blue-600' },
-        { name: 'Huyền Huyễn', slug: 'huyen-huyen', icon: '🌟', color: 'from-purple-500 to-pink-600' },
-        { name: 'Đô Thị', slug: 'do-thi', icon: '🏙️', color: 'from-gray-500 to-slate-600' },
-        { name: 'Kiếm Hiệp', slug: 'kiem-hiep', icon: '⚔️', color: 'from-red-500 to-orange-600' },
-        { name: 'Khoa Huyễn', slug: 'khoa-huyen', icon: '🚀', color: 'from-indigo-500 to-purple-600' },
-        { name: 'Dị Giới', slug: 'di-gioi', icon: '🌍', color: 'from-green-500 to-emerald-600' },
+        { name: 'Tu Tiên', slug: 'tu-tien', icon: '⚡', color: 'from-amber-500 to-orange-600' },
+        { name: 'Huyền Huyễn', slug: 'huyen-huyen', icon: '🌟', color: 'from-yellow-500 to-amber-600' },
+        { name: 'Đô Thị', slug: 'do-thi', icon: '🏙️', color: 'from-slate-500 to-gray-600' },
+        { name: 'Kiếm Hiệp', slug: 'kiem-hiep', icon: '⚔️', color: 'from-red-500 to-rose-600' },
+        { name: 'Khoa Huyễn', slug: 'khoa-huyen', icon: '🚀', color: 'from-orange-500 to-red-600' },
+        { name: 'Dị Giới', slug: 'di-gioi', icon: '🌍', color: 'from-emerald-500 to-green-600' },
         { name: 'Ngôn Tình', slug: 'ngon-tinh', icon: '💕', color: 'from-pink-500 to-rose-600' },
-        { name: 'Linh Dị', slug: 'linh-di', icon: '👻', color: 'from-violet-500 to-purple-600' }
+        { name: 'Linh Dị', slug: 'linh-di', icon: '👻', color: 'from-purple-500 to-violet-600' }
     ];
 
     const rankings = [
@@ -40,7 +40,7 @@ export default function HomeHeader() {
                 {[...Array(12)].map((_, i) => (
                     <div
                         key={i}
-                        className={`absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-60 animate-float-${i % 4 + 1}`}
+                        className={`absolute w-1 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-60 animate-float-${i % 4 + 1}`}
                         style={{
                             left: `${Math.random() * 100}%`,
                             top: `${Math.random() * 100}%`,
@@ -53,12 +53,12 @@ export default function HomeHeader() {
 
             <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
                 isScrolled 
-                    ? 'bg-slate-900/95 backdrop-blur-xl shadow-2xl border-b border-cyan-500/20' 
-                    : 'bg-slate-900/80 backdrop-blur-lg'
+                    ? 'bg-slate-800/95 backdrop-blur-xl shadow-2xl border-b border-amber-500/30' 
+                    : 'bg-slate-800/80 backdrop-blur-lg'
             }`}>
                 {/* Energy Flow Animation */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-60">
-                    <div className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 animate-pulse"></div>
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-60">
+                    <div className="h-full bg-gradient-to-r from-amber-400 via-orange-500 to-red-500 animate-pulse"></div>
                 </div>
 
                 <div className="container mx-auto px-4">
@@ -66,18 +66,18 @@ export default function HomeHeader() {
                         {/* Logo */}
                         <Link href="/" className="flex items-center space-x-3 group">
                             <div className="relative">
-                                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-cyan-500/25 transition-all duration-300 animate-pulse-slow">
+                                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 via-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-amber-500/25 transition-all duration-300 animate-pulse-slow">
                                     <span className="text-white font-bold text-xl">修</span>
                                 </div>
                                 {/* Energy Rings */}
-                                <div className="absolute inset-0 rounded-xl border-2 border-cyan-400/30 animate-spin-slow"></div>
-                                <div className="absolute inset-1 rounded-lg border border-blue-400/20 animate-spin-reverse"></div>
+                                <div className="absolute inset-0 rounded-xl border-2 border-amber-400/30 animate-spin-slow"></div>
+                                <div className="absolute inset-1 rounded-lg border border-orange-400/20 animate-spin-reverse"></div>
                             </div>
                             <div>
-                                <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:to-purple-300 transition-all duration-300">
+                                <h1 className="text-xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent group-hover:from-amber-300 group-hover:to-red-300 transition-all duration-300">
                                     Tu Tiên Online
                                 </h1>
-                                <p className="text-xs text-cyan-300/70 font-medium">Nghịch Thiên · Đắc Đạo</p>
+                                <p className="text-xs text-amber-300/70 font-medium">Nghịch Thiên · Đắc Đạo</p>
                             </div>
                         </Link>
 
@@ -106,19 +106,19 @@ export default function HomeHeader() {
                                 </button>
                                 
                                 {activeDropdown === 'genres' && (
-                                    <div className="absolute top-full left-0 mt-3 w-80 bg-slate-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-cyan-500/20 overflow-hidden animate-fade-in">
+                                    <div className="absolute top-full left-0 mt-3 w-80 bg-slate-700/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-amber-500/30 overflow-hidden animate-fade-in">
                                         <div className="p-4">
                                             <div className="grid grid-cols-2 gap-2">
                                                 {genres.map((genre) => (
                                                     <Link
                                                         key={genre.slug}
                                                         href={`/truyen/the-loai/${genre.slug}`}
-                                                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-slate-700/50 transition-all duration-300 border border-transparent hover:border-cyan-500/30"
+                                                        className="group flex items-center space-x-3 p-3 rounded-xl hover:bg-slate-600/50 transition-all duration-300 border border-transparent hover:border-amber-500/30"
                                                     >
                                                         <div className={`w-8 h-8 bg-gradient-to-r ${genre.color} rounded-lg flex items-center justify-center text-white text-sm group-hover:scale-110 transition-transform duration-300`}>
                                                             {genre.icon}
                                                         </div>
-                                                        <span className="text-gray-200 font-medium group-hover:text-cyan-300 transition-colors">{genre.name}</span>
+                                                        <span className="text-gray-200 font-medium group-hover:text-amber-300 transition-colors">{genre.name}</span>
                                                     </Link>
                                                 ))}
                                             </div>
@@ -144,22 +144,22 @@ export default function HomeHeader() {
                                 </button>
                                 
                                 {activeDropdown === 'rankings' && (
-                                    <div className="absolute top-full left-0 mt-3 w-64 bg-slate-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-cyan-500/20 overflow-hidden animate-fade-in">
+                                    <div className="absolute top-full left-0 mt-3 w-64 bg-slate-700/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-amber-500/30 overflow-hidden animate-fade-in">
                                         <div className="p-3">
                                             {rankings.map((ranking) => (
                                                 <Link
                                                     key={ranking.slug}
                                                     href={`/top/${ranking.slug}`}
-                                                    className="group flex items-center justify-between p-3 rounded-xl hover:bg-slate-700/50 transition-all duration-300 border border-transparent hover:border-cyan-500/30"
+                                                    className="group flex items-center justify-between p-3 rounded-xl hover:bg-slate-600/50 transition-all duration-300 border border-transparent hover:border-amber-500/30"
                                                 >
                                                     <div className="flex items-center space-x-3">
                                                         <span className="text-xl group-hover:scale-110 transition-transform duration-300">{ranking.icon}</span>
                                                         <div>
-                                                            <span className="text-gray-200 font-medium group-hover:text-cyan-300 transition-colors">Top {ranking.name}</span>
+                                                            <span className="text-gray-200 font-medium group-hover:text-amber-300 transition-colors">Top {ranking.name}</span>
                                                             <p className="text-xs text-gray-400">{ranking.desc}</p>
                                                         </div>
                                                     </div>
-                                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                                                    <svg className="w-4 h-4 text-gray-400 group-hover:text-amber-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
                                                         <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                                                     </svg>
                                                 </Link>
@@ -182,15 +182,15 @@ export default function HomeHeader() {
                                 <input
                                     type="text"
                                     placeholder="Tìm truyện tu tiên..."
-                                    className="w-72 px-4 py-2.5 pl-12 bg-slate-800/50 border border-slate-600/50 rounded-full text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300 backdrop-blur-sm group-hover:bg-slate-700/50"
+                                    className="w-72 px-4 py-2.5 pl-12 bg-slate-700/50 border border-slate-500/50 rounded-full text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500/50 transition-all duration-300 backdrop-blur-sm group-hover:bg-slate-600/50"
                                 />
                                 <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                                    <svg className="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-5 h-5 text-gray-400 group-hover:text-amber-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                 </div>
                                 <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                                    <kbd className="px-2 py-1 text-xs text-gray-400 bg-slate-700/50 rounded border border-slate-600/50">⌘K</kbd>
+                                    <kbd className="px-2 py-1 text-xs text-gray-400 bg-slate-600/50 rounded border border-slate-500/50">⌘K</kbd>
                                 </div>
                             </div>
                         </div>
@@ -199,20 +199,20 @@ export default function HomeHeader() {
                         <div className="flex items-center space-x-3">
                             <Link
                                 href="/auth/dang-nhap"
-                                className="px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors font-medium border border-slate-600/50 rounded-lg hover:border-cyan-500/50 backdrop-blur-sm"
+                                className="px-4 py-2 text-gray-300 hover:text-amber-400 transition-colors font-medium border border-slate-500/50 rounded-lg hover:border-amber-500/50 backdrop-blur-sm"
                             >
                                 Đăng Nhập
                             </Link>
                             <Link
                                 href="/auth/dang-ky"
-                                className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-400 hover:to-blue-500 transition-all duration-300 font-medium shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105"
+                                className="px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg hover:from-amber-400 hover:to-orange-500 transition-all duration-300 font-medium shadow-lg hover:shadow-amber-500/25 transform hover:scale-105"
                             >
                                 Bắt Đầu Tu Luyện
                             </Link>
                         </div>
 
                         {/* Mobile Menu Button */}
-                        <button className="lg:hidden p-2 text-gray-300 hover:text-cyan-400 transition-colors">
+                        <button className="lg:hidden p-2 text-gray-300 hover:text-amber-400 transition-colors">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
@@ -223,7 +223,7 @@ export default function HomeHeader() {
 
             <style jsx>{`
                 .nav-item {
-                    @apply text-gray-300 hover:text-cyan-400 font-medium transition-all duration-300 cursor-pointer flex items-center px-3 py-2 rounded-lg hover:bg-slate-800/30;
+                    @apply text-gray-300 hover:text-amber-400 font-medium transition-all duration-300 cursor-pointer flex items-center px-3 py-2 rounded-lg hover:bg-slate-700/30;
                 }
                 
                 @keyframes float-1 {
