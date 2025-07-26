@@ -24,7 +24,7 @@ export default function HomeHeader() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent animate-pulse"></div>
             </div>
             
-            <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="relative max-w-7xl mx-auto px-4 lg:px-24">
                 <div className="flex justify-between items-center h-16 lg:h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
