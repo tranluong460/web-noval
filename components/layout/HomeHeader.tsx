@@ -12,7 +12,7 @@ export default function HomeHeader() {
     const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
     return (
-        <header className="min-100px relative bg-gradient-to-br from-slate-900 via-indigo-900 via-purple-900 to-slate-800 shadow-2xl sticky top-0 z-50 overflow-hidden">
+        <header className="relative bg-gradient-to-br from-slate-900 via-indigo-900 via-purple-900 to-slate-800 shadow-2xl sticky top-0 z-50 overflow-hidden">
             {/* Background effects */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-0 left-1/4 w-48 h-48 md:w-72 md:h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
