@@ -1,5 +1,0 @@
-pipeline:
-  trigger:
-    type: git
-    repo: https://github.com/tranluong460/web-noval
-    branch: main
