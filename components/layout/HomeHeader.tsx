@@ -14,7 +14,9 @@ export default function HomeHeader() {
     return (
         <header className="relative bg-gradient-to-br from-red-950 via-orange-900 to-amber-900 shadow-2xl sticky top-0 z-50 border-b-4 border-gradient-to-r from-red-500 via-orange-500 to-yellow-500">
             {/* Decorative pattern overlay */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23fbbf24" fill-opacity="0.05"%3E%3Cpath d="M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+            <div className="absolute inset-0 opacity-30">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+            </div>
             
             {/* Top decorative border with martial arts pattern */}
             <div className="h-2 bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-orange-500 to-red-500 relative">
