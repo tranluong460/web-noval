@@ -88,15 +88,12 @@ export default function HomeHeader() {
                             <button className="group relative px-4 py-2.5 text-base text-slate-200 hover:text-cyan-200 font-semibold transition-all duration-300 rounded-lg flex items-center">
                                 <Crown className="h-4 w-4 mr-2 text-yellow-400 group-hover:text-cyan-300" />
                                 <span className="relative z-10">Danh Vọng</span>
-                                <Sparkles className="h-3 w-3 ml-1 text-yellow-400 animate-pulse" />
+                                <ChevronDown className="h-3 w-3 ml-1 text-yellow-400" />
                                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg"></div>
                                 <div className="absolute inset-0 border border-transparent group-hover:border-cyan-400/30 rounded-lg transition-all duration-300"></div>
                             </button>
-                            <div className="absolute left-0 mt-2 w-64 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 backdrop-blur-sm">
+                            <div className="absolute left-0 mt-2 w-56 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 backdrop-blur-sm z-50">
                                 <div className="py-2">
-                                    <div className="px-4 py-3 text-xs font-bold text-cyan-300 border-b border-cyan-400/20 bg-gradient-to-r from-slate-800/50 to-indigo-800/50">
-                                        ✨ TIÊN GIỚI DANH BẢNG ✨
-                                    </div>
                                     <Link href="/top/tuan" className="flex items-center px-4 py-3 text-sm font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-800/30 hover:to-blue-800/30 transition-all duration-200 border-l-2 border-transparent hover:border-cyan-400">
                                         <Zap className="h-4 w-4 mr-3 text-yellow-400" />
                                         🌟 Thiên Kiêu (Tuần)
@@ -163,7 +160,7 @@ export default function HomeHeader() {
                                 <ChevronDown className="h-3 w-3 ml-1 text-yellow-400" />
                                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                             </button>
-                            <div className="absolute left-0 mt-2 w-48 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30">
+                            <div className="absolute left-0 mt-2 w-44 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 z-50">
                                 <div className="py-2">
                                     <Link href="/top/tuan" className="flex items-center px-3 py-2 text-sm text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-800/30 hover:to-blue-800/30 transition-all duration-200">
                                         <Zap className="h-4 w-4 mr-2 text-yellow-400" />
@@ -251,8 +248,8 @@ export default function HomeHeader() {
 
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
-                    <div className="lg:hidden border-t border-cyan-400/20 absolute left-0 right-0 top-full bg-gradient-to-b from-slate-900/95 via-indigo-900/95 to-purple-900/95 backdrop-blur-md shadow-2xl">
-                        <div className="px-3 pt-4 pb-4 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
+                    <div className="lg:hidden border-t border-cyan-400/20 absolute left-0 right-0 top-full bg-gradient-to-b from-slate-900/98 via-indigo-900/98 to-purple-900/98 backdrop-blur-md shadow-2xl z-40">
+                        <div className="px-4 pt-4 pb-4 space-y-2 max-h-[calc(100vh-100px)] overflow-y-auto">
                             <Link
                                 href="/"
                                 className="flex items-center px-4 py-3 text-base font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-600/20 hover:to-blue-600/20 rounded-lg transition-all duration-300 border border-transparent hover:border-cyan-400/30"
@@ -274,7 +271,7 @@ export default function HomeHeader() {
                             <div className="space-y-2">
                                 <button 
                                     onClick={toggleTopMenu}
-                                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-cyan-300 bg-gradient-to-r from-slate-800/50 to-indigo-800/50 rounded-lg border border-cyan-400/20"
+                                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-600/20 hover:to-blue-600/20 rounded-lg transition-all duration-300 border border-transparent hover:border-cyan-400/30"
                                 >
                                     <div className="flex items-center">
                                         <Crown className="h-5 w-5 mr-3 text-yellow-400" />
@@ -284,10 +281,10 @@ export default function HomeHeader() {
                                 </button>
                                 
                                 {isTopMenuOpen && (
-                                    <div className="ml-6 space-y-1">
+                                    <div className="ml-4 space-y-1 bg-gradient-to-r from-slate-800/30 to-indigo-800/30 rounded-lg p-2">
                                         <Link
                                             href="/top/tuan"
-                                            className="flex items-center px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300 border-l-2 border-yellow-400/50"
+                                            className="flex items-center px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300"
                                             onClick={() => setIsMenuOpen(false)}
                                         >
                                             <Zap className="h-4 w-4 mr-3 text-yellow-400" />
@@ -295,7 +292,7 @@ export default function HomeHeader() {
                                         </Link>
                                         <Link
                                             href="/top/thang"
-                                            className="flex items-center px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300 border-l-2 border-purple-400/50"
+                                            className="flex items-center px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300"
                                             onClick={() => setIsMenuOpen(false)}
                                         >
                                             <Crown className="h-4 w-4 mr-3 text-purple-400" />
@@ -303,7 +300,7 @@ export default function HomeHeader() {
                                         </Link>
                                         <Link
                                             href="/top/nam"
-                                            className="flex items-center px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300 border-l-2 border-cyan-400/50"
+                                            className="flex items-center px-3 py-2 text-sm font-medium text-slate-300 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-700/20 hover:to-blue-700/20 rounded-lg transition-all duration-300"
                                             onClick={() => setIsMenuOpen(false)}
                                         >
                                             <Star className="h-4 w-4 mr-3 text-cyan-400" />
@@ -332,7 +329,7 @@ export default function HomeHeader() {
                         </div>
                         
                         {/* Mobile Auth Buttons */}
-                        <div className="px-3 py-4 border-t border-cyan-400/20 space-y-3 bg-gradient-to-b from-indigo-900/90 to-slate-900/90 backdrop-blur-md">
+                        <div className="px-4 py-4 border-t border-cyan-400/20 space-y-3 bg-gradient-to-b from-indigo-900/90 to-slate-900/90">
                             <Link
                                 href="/auth/dang-nhap"
                                 className="flex items-center justify-center space-x-2 w-full px-4 py-3 text-base font-medium text-slate-200 border border-cyan-400/50 rounded-lg hover:border-cyan-300 hover:bg-gradient-to-r hover:from-cyan-600/20 hover:to-blue-600/20 transition-all duration-300"
