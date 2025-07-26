@@ -79,6 +79,28 @@ export default function Home() {
         { title: "Vạn Cổ Thần Đế", chapter: "Chương 2134: Cổ Thần Truyền Thừa", time: "3 giờ trước", author: "Phi Thiên Ngư" }
     ];
 
+    const newReleases = [
+        { id: 1, title: "Thiên Đạo Vô Thường", author: "Mộng Nhập Thần Cơ", genre: "Tu Tiên", genreColor: "bg-purple-600/20 text-purple-400 border-purple-500/30", chapters: 1, rating: 9.8, views: "1.2K", releaseDate: "Hôm nay", cover: "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "thien-dao-vo-thuong" },
+        { id: 2, title: "Ma Tôn Lâm Thế", author: "Hắc Dạ Bạch Châu", genre: "Ma Đạo", genreColor: "bg-red-600/20 text-red-400 border-red-500/30", chapters: 3, rating: 9.5, views: "2.8K", releaseDate: "Hôm nay", cover: "https://images.pexels.com/photos/1366957/pexels-photo-1366957.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "ma-ton-lam-the" },
+        { id: 3, title: "Kiếm Phá Hư Không", author: "Phong Lưu Thư Ngốc", genre: "Kiếm Tu", genreColor: "bg-blue-600/20 text-blue-400 border-blue-500/30", chapters: 2, rating: 9.3, views: "1.9K", releaseDate: "Hôm nay", cover: "https://images.pexels.com/photos/1366942/pexels-photo-1366942.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "kiem-pha-hu-khong" },
+        { id: 4, title: "Thần Hoàng Bất Diệt", author: "Thiên Tằm Thổ Đậu", genre: "Thần Thoại", genreColor: "bg-yellow-600/20 text-yellow-400 border-yellow-500/30", chapters: 5, rating: 9.7, views: "5.2K", releaseDate: "Hôm qua", cover: "https://images.pexels.com/photos/1366944/pexels-photo-1366944.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "than-hoang-bat-diet" },
+        { id: 5, title: "Huyền Thiên Đế Tôn", author: "Vô Tận Huyễn Tưởng", genre: "Huyền Huyễn", genreColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30", chapters: 4, rating: 9.1, views: "3.7K", releaseDate: "Hôm qua", cover: "https://images.pexels.com/photos/1366946/pexels-photo-1366946.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "huyen-thien-de-ton" },
+        { id: 6, title: "Dị Giới Phong Thần", author: "Cửu Tinh Độc Vũ", genre: "Dị Giới", genreColor: "bg-violet-600/20 text-violet-400 border-violet-500/30", chapters: 6, rating: 8.9, views: "4.1K", releaseDate: "2 ngày trước", cover: "https://images.pexels.com/photos/1366948/pexels-photo-1366948.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "di-gioi-phong-than" },
+        { id: 7, title: "Đô Thị Tu Tiên Giả", author: "Kiếm Du Thái Hư", genre: "Đô Thị", genreColor: "bg-gray-600/20 text-gray-400 border-gray-500/30", chapters: 8, rating: 8.7, views: "6.3K", releaseDate: "2 ngày trước", cover: "https://images.pexels.com/photos/1366950/pexels-photo-1366950.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "do-thi-tu-tien-gia" },
+        { id: 8, title: "Linh Dị Thế Giới", author: "Phi Thiên Ngư", genre: "Linh Dị", genreColor: "bg-indigo-600/20 text-indigo-400 border-indigo-500/30", chapters: 3, rating: 9.0, views: "2.5K", releaseDate: "3 ngày trước", cover: "https://images.pexels.com/photos/1366952/pexels-photo-1366952.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "linh-di-the-gioi" },
+        { id: 9, title: "Vô Cực Kiếm Tôn", author: "Thần Cơ", genre: "Kiếm Tu", genreColor: "bg-blue-600/20 text-blue-400 border-blue-500/30", chapters: 7, rating: 8.8, views: "5.8K", releaseDate: "3 ngày trước", cover: "https://images.pexels.com/photos/1366954/pexels-photo-1366954.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "vo-cuc-kiem-ton" },
+        { id: 10, title: "Thiên Ma Thần Đàm", author: "Mộng Nhập Thần Cơ", genre: "Ma Đạo", genreColor: "bg-red-600/20 text-red-400 border-red-500/30", chapters: 9, rating: 9.2, views: "7.1K", releaseDate: "4 ngày trước", cover: "https://images.pexels.com/photos/1366956/pexels-photo-1366956.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "thien-ma-than-dam" },
+        { id: 11, title: "Bất Tử Thần Hoàng", author: "Hắc Dạ Bạch Châu", genre: "Thần Thoại", genreColor: "bg-yellow-600/20 text-yellow-400 border-yellow-500/30", chapters: 5, rating: 9.4, views: "4.6K", releaseDate: "4 ngày trước", cover: "https://images.pexels.com/photos/1366958/pexels-photo-1366958.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "bat-tu-than-hoang" },
+        { id: 12, title: "Huyền Môn Đại Sư", author: "Phong Lưu Thư Ngốc", genre: "Huyền Huyễn", genreColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30", chapters: 11, rating: 8.6, views: "8.9K", releaseDate: "5 ngày trước", cover: "https://images.pexels.com/photos/1366960/pexels-photo-1366960.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "huyen-mon-dai-su" },
+        { id: 13, title: "Dị Năng Đô Thị", author: "Thiên Tằm Thổ Đậu", genre: "Đô Thị", genreColor: "bg-gray-600/20 text-gray-400 border-gray-500/30", chapters: 13, rating: 8.5, views: "9.7K", releaseDate: "5 ngày trước", cover: "https://images.pexels.com/photos/1366962/pexels-photo-1366962.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "di-nang-do-thi" },
+        { id: 14, title: "Vạn Giới Chí Tôn", author: "Vô Tận Huyễn Tưởng", genre: "Dị Giới", genreColor: "bg-violet-600/20 text-violet-400 border-violet-500/30", chapters: 10, rating: 8.9, views: "7.8K", releaseDate: "6 ngày trước", cover: "https://images.pexels.com/photos/1366964/pexels-photo-1366964.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "van-gioi-chi-ton" },
+        { id: 15, title: "Quỷ Vương Truyền Thuyết", author: "Cửu Tinh Độc Vũ", genre: "Linh Dị", genreColor: "bg-indigo-600/20 text-indigo-400 border-indigo-500/30", chapters: 8, rating: 9.1, views: "6.4K", releaseDate: "6 ngày trước", cover: "https://images.pexels.com/photos/1366966/pexels-photo-1366966.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "quy-vuong-truyen-thuyet" },
+        { id: 16, title: "Tu Tiên Nông Dân", author: "Kiếm Du Thái Hư", genre: "Tu Tiên", genreColor: "bg-purple-600/20 text-purple-400 border-purple-500/30", chapters: 15, rating: 8.4, views: "11.2K", releaseDate: "1 tuần trước", cover: "https://images.pexels.com/photos/1366968/pexels-photo-1366968.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "tu-tien-nong-dan" },
+        { id: 17, title: "Thần Cấp Anh Hùng", author: "Phi Thiên Ngư", genre: "Thần Thoại", genreColor: "bg-yellow-600/20 text-yellow-400 border-yellow-500/30", chapters: 12, rating: 8.7, views: "9.3K", releaseDate: "1 tuần trước", cover: "https://images.pexels.com/photos/1366970/pexels-photo-1366970.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "than-cap-anh-hung" },
+        { id: 18, title: "Ma Kiếm Sinh Tử", author: "Thần Cơ", genre: "Ma Đạo", genreColor: "bg-red-600/20 text-red-400 border-red-500/30", chapters: 14, rating: 8.8, views: "10.5K", releaseDate: "1 tuần trước", cover: "https://images.pexels.com/photos/1366972/pexels-photo-1366972.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "ma-kiem-sinh-tu" },
+        { id: 19, title: "Huyền Thiên Bí Thuật", author: "Mộng Nhập Thần Cơ", genre: "Huyền Huyễn", genreColor: "bg-emerald-600/20 text-emerald-400 border-emerald-500/30", chapters: 16, rating: 8.3, views: "12.1K", releaseDate: "1 tuần trước", cover: "https://images.pexels.com/photos/1366974/pexels-photo-1366974.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "huyen-thien-bi-thuat" },
+        { id: 20, title: "Kiếm Đạo Thần Hoàng", author: "Hắc Dạ Bạch Châu", genre: "Kiếm Tu", genreColor: "bg-blue-600/20 text-blue-400 border-blue-500/30", chapters: 18, rating: 8.6, views: "13.7K", releaseDate: "1 tuần trước", cover: "https://images.pexels.com/photos/1366976/pexels-photo-1366976.jpeg?auto=compress&cs=tinysrgb&w=100", slug: "kiem-dao-than-hoang" }
+    ];
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-purple-900 text-white overflow-hidden">
             {/* Background Effects */}
@@ -301,6 +323,103 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* New Releases */}
+                <section className="py-16 px-6 bg-black/10 backdrop-blur-sm">
+                    <div className="container mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                                🆕 Truyện Mới Ra Mắt
+                            </h2>
+                            <p className="text-gray-400 text-lg">Những tác phẩm tiên hiệp mới nhất vừa được phát hành</p>
+                        </div>
+                        
+                        <div className="bg-black/50 backdrop-blur-xl rounded-2xl border border-purple-500/30 overflow-hidden">
+                            <div className="p-6">
+                                <div className="space-y-3">
+                                    {newReleases.map((story, index) => (
+                                        <Link
+                                            key={story.id}
+                                            href={`/truyen/${story.slug}`}
+                                            className="group flex items-center space-x-4 p-4 rounded-xl hover:bg-purple-900/20 transition-all duration-300 border border-transparent hover:border-purple-500/30"
+                                        >
+                                            {/* Rank Number */}
+                                            <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                                                {index + 1}
+                                            </div>
+                                            
+                                            {/* Story Cover */}
+                                            <div className="flex-shrink-0 w-12 h-16 rounded-lg overflow-hidden border border-purple-500/30">
+                                                <img 
+                                                    src={story.cover} 
+                                                    alt={story.title}
+                                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                                                />
+                                            </div>
+                                            
+                                            {/* Story Info */}
+                                            <div className="flex-1 min-w-0">
+                                                <h4 className="font-semibold text-white group-hover:text-purple-300 transition-colors truncate">
+                                                    {story.title}
+                                                </h4>
+                                                <p className="text-sm text-purple-400 truncate">
+                                                    ✍️ {story.author}
+                                                </p>
+                                            </div>
+                                            
+                                            {/* Genre */}
+                                            <div className="flex-shrink-0">
+                                                <span className={`px-3 py-1 text-xs rounded-full font-medium ${story.genreColor} border`}>
+                                                    {story.genre}
+                                                </span>
+                                            </div>
+                                            
+                                            {/* Stats */}
+                                            <div className="flex-shrink-0 text-right">
+                                                <div className="text-sm text-gray-300 font-medium">
+                                                    📚 {story.chapters} chương
+                                                </div>
+                                                <div className="text-xs text-gray-500">
+                                                    {story.releaseDate}
+                                                </div>
+                                            </div>
+                                            
+                                            {/* Rating */}
+                                            <div className="flex-shrink-0 text-right">
+                                                <div className="flex items-center text-yellow-400 text-sm">
+                                                    ⭐ {story.rating}
+                                                </div>
+                                                <div className="text-xs text-gray-500">
+                                                    {story.views} lượt đọc
+                                                </div>
+                                            </div>
+                                            
+                                            {/* Arrow */}
+                                            <div className="flex-shrink-0 text-purple-400 group-hover:text-purple-300 transition-colors">
+                                                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            {/* View More Button */}
+                            <div className="border-t border-purple-500/20 p-6 text-center">
+                                <Link
+                                    href="/truyen/moi-ra-mat"
+                                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full hover:from-emerald-500 hover:to-teal-500 transition-all duration-300 font-semibold shadow-lg hover:shadow-emerald-500/30 transform hover:scale-105"
+                                >
+                                    <span className="mr-2">👀</span>
+                                    Xem Tất Cả Truyện Mới
+                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 {/* Call to Action */}
                 <section className="py-20 px-6 text-center">
                     <div className="container mx-auto">
