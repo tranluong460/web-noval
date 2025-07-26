@@ -52,7 +52,7 @@ export default function HomeHeader() {
                                     逍遥仙境
                                 </span>
                                 <span className="text-[8px] sm:text-[10px] md:text-xs text-cyan-200/80 tracking-[0.2em] sm:tracking-[0.3em] md:tracking-[0.4em] font-medium truncate">
-                                    TIÊU DAO TỰ TẠI • HÀO HIỆP TRƯỢNG NGHĨA
+                                    TIÊU DAO TỰ TẠI
                                 </span>
                             </div>
                         </Link>
