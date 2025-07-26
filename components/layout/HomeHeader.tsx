@@ -85,14 +85,14 @@ export default function HomeHeader() {
                         </Link>
 
                         <div className="relative group">
-                            <button className="group relative px-4 py-2.5 text-base text-slate-200 hover:text-cyan-200 font-semibold transition-all duration-300 rounded-lg flex items-center">
+                            <button className="relative px-4 py-2.5 text-base text-slate-200 hover:text-cyan-200 font-semibold transition-all duration-300 rounded-lg flex items-center group">
                                 <Crown className="h-4 w-4 mr-2 text-yellow-400 group-hover:text-cyan-300" />
                                 <span className="relative z-10">Danh Vọng</span>
                                 <ChevronDown className="h-3 w-3 ml-1 text-yellow-400" />
                                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-lg"></div>
                                 <div className="absolute inset-0 border border-transparent group-hover:border-cyan-400/30 rounded-lg transition-all duration-300"></div>
                             </button>
-                            <div className="absolute left-0 mt-2 w-56 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 backdrop-blur-sm z-50">
+                            <div className="absolute left-0 top-full mt-2 w-56 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 backdrop-blur-sm z-50">
                                 <div className="py-2">
                                     <Link href="/top/tuan" className="flex items-center px-4 py-3 text-sm font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-800/30 hover:to-blue-800/30 transition-all duration-200 border-l-2 border-transparent hover:border-cyan-400">
                                         <Zap className="h-4 w-4 mr-3 text-yellow-400" />
@@ -154,13 +154,13 @@ export default function HomeHeader() {
                         </Link>
 
                         <div className="relative group">
-                            <button className="group relative px-3 py-2 text-sm text-slate-200 hover:text-cyan-200 font-semibold transition-all duration-300 rounded-lg flex items-center">
+                            <button className="relative px-3 py-2 text-sm text-slate-200 hover:text-cyan-200 font-semibold transition-all duration-300 rounded-lg flex items-center group">
                                 <Crown className="h-4 w-4 mr-1.5 text-yellow-400 group-hover:text-cyan-300" />
                                 <span className="relative z-10">Top</span>
                                 <ChevronDown className="h-3 w-3 ml-1 text-yellow-400" />
                                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                             </button>
-                            <div className="absolute left-0 mt-2 w-44 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 z-50">
+                            <div className="absolute left-0 top-full mt-2 w-44 bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 border border-cyan-400/30 z-50">
                                 <div className="py-2">
                                     <Link href="/top/tuan" className="flex items-center px-3 py-2 text-sm text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-800/30 hover:to-blue-800/30 transition-all duration-200">
                                         <Zap className="h-4 w-4 mr-2 text-yellow-400" />
@@ -271,13 +271,13 @@ export default function HomeHeader() {
                             <div className="space-y-2">
                                 <button 
                                     onClick={toggleTopMenu}
-                                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-600/20 hover:to-blue-600/20 rounded-lg transition-all duration-300 border border-transparent hover:border-cyan-400/30"
+                                    className="flex items-center justify-between w-full px-4 py-3 text-base font-medium text-slate-200 hover:text-cyan-200 hover:bg-gradient-to-r hover:from-cyan-600/20 hover:to-blue-600/20 rounded-lg transition-all duration-300 border border-transparent hover:border-cyan-400/30 group"
                                 >
                                     <div className="flex items-center">
                                         <Crown className="h-5 w-5 mr-3 text-yellow-400" />
                                         Danh Vọng
                                     </div>
-                                    <ChevronDown className={`h-4 w-4 text-yellow-400 transition-transform duration-200 ${isTopMenuOpen ? 'rotate-180' : ''}`} />
+                                    <ChevronDown className={`h-4 w-4 text-yellow-400 transition-transform duration-200 group-hover:text-cyan-300 ${isTopMenuOpen ? 'rotate-180' : ''}`} />
                                 </button>
                                 
                                 {isTopMenuOpen && (
