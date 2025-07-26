@@ -15,96 +15,75 @@ export default function HomeHeader() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const cultivationRealms = [
-        { name: 'Luyện Khí', slug: 'luyen-khi', desc: 'Cấp cơ bản', icon: '🌬️', color: 'from-cyan-400 to-blue-500' },
-        { name: 'Trúc Cơ', slug: 'truc-co', desc: 'Xây nền tảng', icon: '🏔️', color: 'from-green-400 to-emerald-500' },
-        { name: 'Kim Đan', slug: 'kim-dan', desc: 'Kết kim đan', icon: '⚡', color: 'from-yellow-400 to-orange-500' },
-        { name: 'Nguyên Anh', slug: 'nguyen-anh', desc: 'Tạo nguyên anh', icon: '👶', color: 'from-purple-400 to-pink-500' },
-        { name: 'Hóa Thần', slug: 'hoa-than', desc: 'Hóa thần thức', icon: '🔥', color: 'from-red-400 to-rose-500' },
-        { name: 'Hợp Thể', slug: 'hop-the', desc: 'Hợp nhất thể', icon: '⭐', color: 'from-indigo-400 to-purple-500' },
-        { name: 'Đại Thừa', slug: 'dai-thua', desc: 'Đạt đại thành', icon: '🌟', color: 'from-amber-400 to-yellow-500' },
-        { name: 'Độ Kiếp', slug: 'do-kiep', desc: 'Vượt thiên kiếp', icon: '⚡', color: 'from-violet-400 to-purple-600' }
+    const categories = [
+        { name: 'Tiên Hiệp', slug: 'tien-hiep', icon: '⚔️' },
+        { name: 'Huyền Huyễn', slug: 'huyen-huyen', icon: '🌟' },
+        { name: 'Đô Thị', slug: 'do-thi', icon: '🏙️' },
+        { name: 'Lịch Sử', slug: 'lich-su', icon: '📜' },
+        { name: 'Khoa Huyễn', slug: 'khoa-huyen', icon: '🚀' },
+        { name: 'Kinh Dị', slug: 'kinh-di', icon: '👻' },
+        { name: 'Ngôn Tình', slug: 'ngon-tinh', icon: '💕' },
+        { name: 'Trinh Thám', slug: 'trinh-tham', icon: '🔍' }
     ];
 
-    const heavenlyRankings = [
-        { name: 'Thiên Bảng', slug: 'thien-bang', desc: 'Top thiên giới', icon: '☀️', color: 'text-yellow-400' },
-        { name: 'Địa Bảng', slug: 'dia-bang', desc: 'Top địa giới', icon: '🌍', color: 'text-green-400' },
-        { name: 'Nhân Bảng', slug: 'nhan-bang', desc: 'Top nhân giới', icon: '👥', color: 'text-blue-400' },
-        { name: 'Tiên Bảng', slug: 'tien-bang', desc: 'Top tiên giới', icon: '✨', color: 'text-purple-400' }
+    const rankings = [
+        { name: 'Tuần', slug: 'tuan', icon: '📅' },
+        { name: 'Tháng', slug: 'thang', icon: '📆' },
+        { name: 'Năm', slug: 'nam', icon: '🏆' }
     ];
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             isScrolled 
-                ? 'bg-gradient-to-r from-slate-900/98 via-indigo-950/98 to-slate-900/98 backdrop-blur-xl shadow-2xl border-b-2 border-gradient-to-r from-cyan-400/30 via-purple-400/30 to-cyan-400/30' 
-                : 'bg-gradient-to-r from-transparent via-black/40 to-transparent'
+                ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
+                : 'bg-white/90 backdrop-blur-sm'
         }`}>
-            {/* Spiritual Energy Flow */}
-            <div className="absolute top-0 left-0 right-0 h-1 overflow-hidden">
-                <div className="h-full bg-gradient-to-r from-transparent via-cyan-400 via-purple-400 via-pink-400 to-transparent animate-pulse"></div>
-                <div className="absolute top-0 left-0 h-full w-20 bg-gradient-to-r from-cyan-400 to-purple-400 animate-flow"></div>
-            </div>
-            
             <div className="container mx-auto px-4">
-                <div className="flex items-center justify-between h-24">
-                    {/* Cultivation Logo */}
-                    <Link href="/" className="group flex items-center space-x-4">
-                        <div className="relative">
-                            {/* Main cultivation symbol */}
-                            <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 rounded-full flex items-center justify-center shadow-2xl group-hover:shadow-cyan-400/50 transition-all duration-500 group-hover:scale-110 relative overflow-hidden">
-                                <span className="text-white font-bold text-2xl drop-shadow-lg z-10">修</span>
-                                {/* Rotating energy rings */}
-                                <div className="absolute inset-1 border-2 border-cyan-400/50 rounded-full animate-spin-slow"></div>
-                                <div className="absolute inset-2 border border-purple-400/50 rounded-full animate-spin-reverse"></div>
-                            </div>
-                            {/* Floating spiritual orbs */}
-                            <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-float shadow-lg"></div>
-                            <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full animate-float-delayed shadow-lg"></div>
-                            {/* Energy aura */}
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-400/20 via-purple-400/20 to-pink-400/20 animate-pulse scale-150"></div>
+                <div className="flex items-center justify-between h-16">
+                    {/* Logo */}
+                    <Link href="/" className="flex items-center space-x-3 group">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300">
+                            <span className="text-white font-bold text-lg">📚</span>
                         </div>
-                        <div className="hidden md:block">
-                            <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg tracking-wider">
-                                Tu Tiên
+                        <div>
+                            <h1 className="text-xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
+                                Đọc Truyện
                             </h1>
-                            <p className="text-sm text-cyan-200/80 tracking-[0.3em] font-light">Nghịch Thiên · Trường Sinh</p>
                         </div>
                     </Link>
 
-                    {/* Cultivation Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-6">
-                        {/* Cultivation Realms Dropdown */}
+                    {/* Navigation */}
+                    <nav className="hidden lg:flex items-center space-x-8">
+                        {/* Trang chủ */}
+                        <Link href="/" className="nav-item">
+                            Trang Chủ
+                        </Link>
+
+                        {/* Thể loại */}
                         <div 
                             className="relative"
-                            onMouseEnter={() => setActiveDropdown('realms')}
+                            onMouseEnter={() => setActiveDropdown('categories')}
                             onMouseLeave={() => setActiveDropdown(null)}
                         >
-                            <button className="cultivation-nav-item group">
-                                <span className="chinese-text flex items-center">
-                                    <span className="mr-2 text-xl">🌟</span>Tu Luyện
-                                </span>
-                                <span className="english-text">Cảnh Giới</span>
-                                <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                            <button className="nav-item flex items-center">
+                                Thể Loại
+                                <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
                             </button>
                             
-                            {activeDropdown === 'realms' && (
-                                <div className="absolute top-full left-0 mt-3 w-80 bg-gradient-to-br from-slate-900/98 via-indigo-950/98 to-slate-900/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-cyan-400/30 overflow-hidden">
-                                    <div className="h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"></div>
-                                    <div className="p-3">
-                                        <div className="grid grid-cols-2 gap-2">
-                                            {cultivationRealms.map((realm) => (
+                            {activeDropdown === 'categories' && (
+                                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                                    <div className="p-2">
+                                        <div className="grid grid-cols-2 gap-1">
+                                            {categories.map((category) => (
                                                 <Link
-                                                    key={realm.slug}
-                                                    href={`/truyen/the-loai/${realm.slug}`}
-                                                    className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-purple-500/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-400/20"
+                                                    key={category.slug}
+                                                    href={`/truyen/the-loai/${category.slug}`}
+                                                    className="flex items-center space-x-2 p-3 rounded-md hover:bg-gray-50 transition-colors"
                                                 >
-                                                    <span className="text-xl">{realm.icon}</span>
-                                                    <div>
-                                                        <span className={`bg-gradient-to-r ${realm.color} bg-clip-text text-transparent font-semibold block`}>{realm.name}</span>
-                                                        <p className="text-slate-300 text-xs">{realm.desc}</p>
-                                                    </div>
+                                                    <span className="text-lg">{category.icon}</span>
+                                                    <span className="text-gray-700 font-medium">{category.name}</span>
                                                 </Link>
                                             ))}
                                         </div>
@@ -113,42 +92,30 @@ export default function HomeHeader() {
                             )}
                         </div>
 
-                        {/* Heavenly Rankings Dropdown */}
+                        {/* Xếp hạng */}
                         <div 
                             className="relative"
                             onMouseEnter={() => setActiveDropdown('rankings')}
                             onMouseLeave={() => setActiveDropdown(null)}
                         >
-                            <button className="cultivation-nav-item group">
-                                <span className="chinese-text flex items-center">
-                                    <span className="mr-2 text-xl">🏆</span>Xếp Hạng
-                                </span>
-                                <span className="english-text">Top</span>
-                                <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                            <button className="nav-item flex items-center">
+                                Xếp Hạng
+                                <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
                             </button>
                             
                             {activeDropdown === 'rankings' && (
-                                <div className="absolute top-full left-0 mt-3 w-64 bg-gradient-to-br from-slate-900/98 via-indigo-950/98 to-slate-900/98 backdrop-blur-xl rounded-2xl shadow-2xl border border-cyan-400/30 overflow-hidden">
-                                    <div className="h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"></div>
-                                    <div className="p-3">
-                                        {heavenlyRankings.map((ranking) => (
+                                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden">
+                                    <div className="p-2">
+                                        {rankings.map((ranking) => (
                                             <Link
                                                 key={ranking.slug}
                                                 href={`/top/${ranking.slug}`}
-                                                className="flex items-center justify-between p-4 rounded-xl hover:bg-gradient-to-r hover:from-cyan-500/10 hover:to-purple-500/10 transition-all duration-300 group border border-transparent hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-400/20"
+                                                className="flex items-center space-x-3 p-3 rounded-md hover:bg-gray-50 transition-colors"
                                             >
-                                                <div className="flex items-center space-x-3">
-                                                    <span className="text-2xl">{ranking.icon}</span>
-                                                    <div>
-                                                        <span className={`${ranking.color} font-bold text-lg block`}>{ranking.name}</span>
-                                                        <p className="text-slate-300 text-sm">{ranking.desc}</p>
-                                                    </div>
-                                                </div>
-                                                <svg className="w-4 h-4 text-slate-400 group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                                                </svg>
+                                                <span className="text-lg">{ranking.icon}</span>
+                                                <span className="text-gray-700 font-medium">Top {ranking.name}</span>
                                             </Link>
                                         ))}
                                     </div>
@@ -156,61 +123,46 @@ export default function HomeHeader() {
                             )}
                         </div>
 
-                        {/* Immortal Masters */}
-                        <Link href="/tac-gia" className="cultivation-nav-item group">
-                            <span className="chinese-text flex items-center">
-                                <span className="mr-2 text-xl">🧙‍♂️</span>Tác Giả
-                            </span>
-                            <span className="english-text">Authors</span>
-                        </Link>
-
-                        {/* Spiritual Search */}
-                        <Link href="/tim-kiem" className="cultivation-nav-item group">
-                            <span className="chinese-text flex items-center">
-                                <span className="mr-2 text-xl">🔮</span>Tìm
-                            </span>
-                            <span className="english-text">Search</span>
+                        {/* Tác giả */}
+                        <Link href="/tac-gia" className="nav-item">
+                            Tác Giả
                         </Link>
                     </nav>
 
-                    {/* Spiritual Search Bar */}
+                    {/* Search Bar */}
                     <div className="hidden md:flex items-center">
-                        <div className="relative group">
+                        <div className="relative">
                             <input
                                 type="text"
-                                placeholder="Tìm truyện tu tiên..."
-                                className="w-80 px-6 py-4 pl-14 bg-gradient-to-r from-slate-800/80 via-indigo-900/80 to-slate-800/80 border-2 border-cyan-400/30 rounded-full text-white placeholder-cyan-200/60 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20 focus:shadow-2xl focus:shadow-cyan-400/30 transition-all duration-500 backdrop-blur-md group-hover:border-purple-400/50"
+                                placeholder="Tìm truyện..."
+                                className="w-64 px-4 py-2 pl-10 bg-gray-50 border border-gray-300 rounded-full text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                             />
-                            <div className="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
-                                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+                                <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                 </svg>
                             </div>
-                            <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-cyan-400/70 text-lg">⚡</div>
-                            {/* Search aura effect */}
-                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400/10 to-purple-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                         </div>
                     </div>
 
-                    {/* Cultivation Auth Buttons */}
-                    <div className="flex items-center space-x-4">
+                    {/* Auth Buttons */}
+                    <div className="flex items-center space-x-3">
                         <Link
                             href="/auth/dang-nhap"
-                            className="px-6 py-3 text-cyan-200/80 hover:text-cyan-400 transition-all duration-300 font-medium border-2 border-transparent hover:border-cyan-400/50 rounded-xl hover:bg-cyan-400/10 hover:shadow-lg hover:shadow-cyan-400/20"
+                            className="px-4 py-2 text-gray-600 hover:text-blue-600 transition-colors font-medium"
                         >
                             Đăng Nhập
                         </Link>
                         <Link
                             href="/auth/dang-ky"
-                            className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-full hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 transition-all duration-500 shadow-2xl hover:shadow-cyan-400/40 hover:scale-105 border-2 border-cyan-400/30 relative overflow-hidden group"
+                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-md hover:shadow-lg"
                         >
-                            <span className="relative z-10">Đăng Ký</span>
-                            <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            Đăng Ký
                         </Link>
                     </div>
 
-                    {/* Mobile Cultivation Menu */}
-                    <button className="lg:hidden p-3 text-cyan-200 hover:text-cyan-400 transition-colors border-2 border-cyan-500/30 rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400/50">
+                    {/* Mobile Menu Button */}
+                    <button className="lg:hidden p-2 text-gray-600 hover:text-gray-800 transition-colors">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
@@ -218,146 +170,9 @@ export default function HomeHeader() {
                 </div>
             </div>
 
-            {/* Floating Spiritual Energy Particles */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="spiritual-particle particle-1 bg-cyan-400"></div>
-                <div className="spiritual-particle particle-2 bg-purple-400"></div>
-                <div className="spiritual-particle particle-3 bg-pink-400"></div>
-                <div className="spiritual-particle particle-4 bg-blue-400"></div>
-                <div className="spiritual-particle particle-5 bg-indigo-400"></div>
-                <div className="spiritual-particle particle-6 bg-violet-400"></div>
-                <div className="spiritual-particle particle-7 bg-rose-400"></div>
-                <div className="spiritual-particle particle-8 bg-emerald-400"></div>
-            </div>
-
             <style jsx>{`
-                .cultivation-nav-item {
-                    @apply flex flex-col items-center px-5 py-4 rounded-2xl transition-all duration-500 hover:bg-gradient-to-r hover:from-cyan-500/15 hover:to-purple-500/15 cursor-pointer border-2 border-transparent hover:border-cyan-400/30 hover:shadow-xl hover:shadow-cyan-400/20 hover:scale-105;
-                }
-                
-                .chinese-text {
-                    @apply text-cyan-100 font-bold text-lg group-hover:text-cyan-300 transition-all duration-300 drop-shadow-lg;
-                }
-                
-                .english-text {
-                    @apply text-cyan-300/60 text-xs uppercase tracking-[0.2em] group-hover:text-cyan-200 transition-colors font-light;
-                }
-                
-                .spiritual-particle {
-                    @apply absolute w-3 h-3 rounded-full opacity-60 shadow-lg;
-                    animation: spiritual-float 25s infinite ease-in-out;
-                }
-                
-                .particle-1 {
-                    top: 15%;
-                    left: 8%;
-                    animation-delay: 0s;
-                }
-                
-                .particle-2 {
-                    top: 70%;
-                    right: 15%;
-                    animation-delay: -3s;
-                }
-                
-                .particle-3 {
-                    top: 35%;
-                    left: 75%;
-                    animation-delay: -6s;
-                }
-                
-                .particle-4 {
-                    top: 85%;
-                    left: 25%;
-                    animation-delay: -9s;
-                }
-                
-                .particle-5 {
-                    top: 25%;
-                    right: 35%;
-                    animation-delay: -12s;
-                }
-                
-                .particle-6 {
-                    top: 60%;
-                    left: 50%;
-                    animation-delay: -15s;
-                }
-                
-                .particle-7 {
-                    top: 45%;
-                    right: 60%;
-                    animation-delay: -18s;
-                }
-                
-                .particle-8 {
-                    top: 80%;
-                    right: 80%;
-                    animation-delay: -21s;
-                }
-                
-                @keyframes spiritual-float {
-                    0%, 100% { 
-                        transform: translateY(0) translateX(0) scale(1); 
-                        opacity: 0.6; 
-                    }
-                    25% { 
-                        transform: translateY(-40px) translateX(20px) scale(1.2); 
-                        opacity: 1; 
-                    }
-                    50% { 
-                        transform: translateY(-20px) translateX(-25px) scale(0.8); 
-                        opacity: 0.3; 
-                    }
-                    75% { 
-                        transform: translateY(-60px) translateX(15px) scale(1.1); 
-                        opacity: 0.8; 
-                    }
-                }
-                
-                @keyframes animate-flow {
-                    0% { transform: translateX(-100%); }
-                    100% { transform: translateX(calc(100vw + 100%)); }
-                }
-                
-                @keyframes animate-float {
-                    0%, 100% { transform: translateY(0) rotate(0deg); }
-                    50% { transform: translateY(-10px) rotate(180deg); }
-                }
-                
-                @keyframes animate-float-delayed {
-                    0%, 100% { transform: translateY(0) rotate(0deg); }
-                    50% { transform: translateY(-8px) rotate(-180deg); }
-                }
-                
-                @keyframes spin-slow {
-                    from { transform: rotate(0deg); }
-                    to { transform: rotate(360deg); }
-                }
-                
-                @keyframes spin-reverse {
-                    from { transform: rotate(360deg); }
-                    to { transform: rotate(0deg); }
-                }
-                
-                .animate-flow {
-                    animation: animate-flow 3s linear infinite;
-                }
-                
-                .animate-float {
-                    animation: animate-float 3s ease-in-out infinite;
-                }
-                
-                .animate-float-delayed {
-                    animation: animate-float-delayed 3s ease-in-out infinite 1.5s;
-                }
-                
-                .animate-spin-slow {
-                    animation: spin-slow 8s linear infinite;
-                }
-                
-                .animate-spin-reverse {
-                    animation: spin-reverse 6s linear infinite;
+                .nav-item {
+                    @apply text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 cursor-pointer;
                 }
             `}</style>
         </header>
