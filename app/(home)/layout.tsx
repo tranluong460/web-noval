@@ -28,7 +28,7 @@ export default function HomeLayout({
                 vipLevel: 3
             });
             setIsLoading(false);
-        }, 1500);
+        }, 1000);
     };
 
     // Mock logout function

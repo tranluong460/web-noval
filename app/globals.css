@@ -14,15 +14,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-ngan-hoa-100 dark:bg-ngan-hoa-800;
+  @apply bg-cloud-100 dark:bg-cloud-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-ngoc-thuy-300 dark:bg-thien-thanh-600 rounded-full;
+  @apply bg-jade-300 dark:bg-sky-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-ngoc-thuy-400 dark:bg-thien-thanh-500;
+  @apply bg-jade-400 dark:bg-sky-500;
 }
 
 /* Dropdown animation keyframes */
@@ -69,7 +69,7 @@ html {
 
 /* Custom focus styles cho accessibility */
 .focus-visible:focus-visible {
-  @apply outline-none ring-2 ring-ngoc-thuy-500 ring-offset-2 dark:ring-thien-thanh-400 dark:ring-offset-ngan-hoa-900;
+  @apply outline-none ring-2 ring-jade-500 ring-offset-2 dark:ring-sky-400 dark:ring-offset-cloud-900;
 }
 
 /* Smooth transitions cho theme switching */
@@ -80,34 +80,26 @@ html {
 }
 
 /* Custom gradient backgrounds */
-.bg-tu-tien-gradient {
-  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #a78bfa 100%);
-}
-
-.bg-thien-dia-gradient {
+.bg-xianxia-gradient {
   background: linear-gradient(135deg, #f8fafc 0%, #10b981 50%, #06b6d4 100%);
-}
-
-.bg-cultivation-gradient {
-  background: linear-gradient(135deg, #64748b 0%, #059669 20%, #d97706 40%, #0891b2 60%, #7c3aed 80%, #ea580c 100%);
 }
 
 /* Text selection colors */
 ::selection {
-  @apply bg-ngoc-thuy-200 text-ngoc-thuy-900;
+  @apply bg-jade-200 text-jade-900;
 }
 
 ::-moz-selection {
-  @apply bg-ngoc-thuy-200 text-ngoc-thuy-900;
+  @apply bg-jade-200 text-jade-900;
 }
 
 /* Dark mode text selection */
 .dark ::selection {
-  @apply bg-thien-thanh-800 text-thien-thanh-100;
+  @apply bg-sky-800 text-sky-100;
 }
 
 .dark ::-moz-selection {
-  @apply bg-thien-thanh-800 text-thien-thanh-100;
+  @apply bg-sky-800 text-sky-100;
 }
 
 /* Loading spinner animation */
@@ -117,11 +109,11 @@ html {
 
 /* Backdrop blur fallback */
 .backdrop-blur-fallback {
-  background-color: rgba(248, 250, 252, 0.8);
+  background-color: rgba(248, 250, 252, 0.8); /* cloud-50 */
 }
 
 .dark .backdrop-blur-fallback {
-  background-color: rgba(15, 23, 42, 0.8);
+  background-color: rgba(15, 23, 42, 0.8); /* cloud-900 */
 }
 
 /* Mobile menu slide animation */
