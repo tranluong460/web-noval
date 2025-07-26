@@ -47,10 +47,10 @@ export interface DropdownItem {
 
 // Màu sắc tu tiên cho cultivation levels
 export const CULTIVATION_COLORS = {
-  'Luyện Khí': 'text-gray-700 bg-gray-100',
-  'Trúc Cơ': 'text-jade-700 bg-jade-100',
-  'Kim Đan': 'text-gold-700 bg-gold-100',
-  'Nguyên Anh': 'text-sky-700 bg-sky-100',
-  'Hóa Thần': 'text-purple-700 bg-purple-100',
-  'Đại Thừa': 'text-orange-700 bg-orange-100'
+  'Luyện Khí': 'text-gray-700 bg-gray-100 dark:text-gray-300 dark:bg-gray-800',
+  'Trúc Cơ': 'text-emerald-700 bg-emerald-100 dark:text-emerald-300 dark:bg-emerald-800',
+  'Kim Đan': 'text-amber-700 bg-amber-100 dark:text-amber-300 dark:bg-amber-800',
+  'Nguyên Anh': 'text-cyan-700 bg-cyan-100 dark:text-cyan-300 dark:bg-cyan-800',
+  'Hóa Thần': 'text-purple-700 bg-purple-100 dark:text-purple-300 dark:bg-purple-800',
+  'Đại Thừa': 'text-orange-700 bg-orange-100 dark:text-orange-300 dark:bg-orange-800'
 } as const;

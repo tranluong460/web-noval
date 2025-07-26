@@ -69,7 +69,7 @@ html {
 
 /* Custom focus styles cho accessibility */
 .focus-visible:focus-visible {
-  @apply outline-none ring-2 ring-jade-500 ring-offset-2 dark:ring-sky-400 dark:ring-offset-cloud-900;
+  @apply outline-none ring-2 ring-emerald-500 ring-offset-2 dark:ring-cyan-400 dark:ring-offset-slate-900;
 }
 
 /* Smooth transitions cho theme switching */
@@ -86,20 +86,20 @@ html {
 
 /* Text selection colors */
 ::selection {
-  @apply bg-jade-200 text-jade-900;
+  @apply bg-emerald-200 text-emerald-900;
 }
 
 ::-moz-selection {
-  @apply bg-jade-200 text-jade-900;
+  @apply bg-emerald-200 text-emerald-900;
 }
 
 /* Dark mode text selection */
 .dark ::selection {
-  @apply bg-sky-800 text-sky-100;
+  @apply bg-cyan-800 text-cyan-100;
 }
 
 .dark ::-moz-selection {
-  @apply bg-sky-800 text-sky-100;
+  @apply bg-cyan-800 text-cyan-100;
 }
 
 /* Loading spinner animation */
@@ -109,11 +109,11 @@ html {
 
 /* Backdrop blur fallback */
 .backdrop-blur-fallback {
-  background-color: rgba(248, 250, 252, 0.8); /* cloud-50 */
+  background-color: rgba(248, 250, 252, 0.8); /* slate-50 */
 }
 
 .dark .backdrop-blur-fallback {
-  background-color: rgba(15, 23, 42, 0.8); /* cloud-900 */
+  background-color: rgba(15, 23, 42, 0.8); /* slate-900 */
 }
 
 /* Mobile menu slide animation */
