@@ -61,14 +61,6 @@ export default function HomeHeader() {
 
                     {/* Navigation */}
                     <nav className="hidden lg:flex items-center space-x-8">
-                        {/* Home */}
-                        <Link href="/" className="nav-item group">
-                            <span className="chinese-text flex items-center">
-                                <span className="mr-2">🏔️</span>江湖
-                            </span>
-                            <span className="english-text">Home</span>
-                        </Link>
-
                         {/* Categories Dropdown */}
                         <div 
                             className="relative"
