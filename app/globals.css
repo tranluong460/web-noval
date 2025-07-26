@@ -14,15 +14,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-slate-800;
+  @apply bg-ngan-hoa-100 dark:bg-ngan-hoa-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-emerald-300 dark:bg-cyan-600 rounded-full;
+  @apply bg-ngoc-thuy-300 dark:bg-thien-thanh-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-emerald-400 dark:bg-cyan-500;
+  @apply bg-ngoc-thuy-400 dark:bg-thien-thanh-500;
 }
 
 /* Dropdown animation keyframes */
@@ -40,10 +40,10 @@ html {
 /* Glow pulse animation cho search bar */
 @keyframes glowPulse {
   0% {
-    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.5);
   }
   100% {
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.4);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.8), 0 0 30px rgba(16, 185, 129, 0.4);
   }
 }
 
@@ -69,7 +69,7 @@ html {
 
 /* Custom focus styles cho accessibility */
 .focus-visible:focus-visible {
-  @apply outline-none ring-2 ring-emerald-500 ring-offset-2 dark:ring-cyan-400 dark:ring-offset-slate-900;
+  @apply outline-none ring-2 ring-ngoc-thuy-500 ring-offset-2 dark:ring-thien-thanh-400 dark:ring-offset-ngan-hoa-900;
 }
 
 /* Smooth transitions cho theme switching */
@@ -80,34 +80,34 @@ html {
 }
 
 /* Custom gradient backgrounds */
-.bg-immortal-gradient {
-  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
+.bg-tu-tien-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #a78bfa 100%);
 }
 
-.bg-celestial-gradient {
-  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%);
+.bg-thien-dia-gradient {
+  background: linear-gradient(135deg, #f8fafc 0%, #10b981 50%, #06b6d4 100%);
 }
 
 .bg-cultivation-gradient {
-  background: linear-gradient(135deg, #059669 0%, #0891b2 25%, #2563eb 50%, #7c3aed 75%, #dc2626 100%);
+  background: linear-gradient(135deg, #64748b 0%, #059669 20%, #d97706 40%, #0891b2 60%, #7c3aed 80%, #ea580c 100%);
 }
 
 /* Text selection colors */
 ::selection {
-  @apply bg-emerald-200 text-emerald-900;
+  @apply bg-ngoc-thuy-200 text-ngoc-thuy-900;
 }
 
 ::-moz-selection {
-  @apply bg-emerald-200 text-emerald-900;
+  @apply bg-ngoc-thuy-200 text-ngoc-thuy-900;
 }
 
 /* Dark mode text selection */
 .dark ::selection {
-  @apply bg-cyan-800 text-cyan-100;
+  @apply bg-thien-thanh-800 text-thien-thanh-100;
 }
 
 .dark ::-moz-selection {
-  @apply bg-cyan-800 text-cyan-100;
+  @apply bg-thien-thanh-800 text-thien-thanh-100;
 }
 
 /* Loading spinner animation */
@@ -117,7 +117,7 @@ html {
 
 /* Backdrop blur fallback */
 .backdrop-blur-fallback {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(248, 250, 252, 0.8);
 }
 
 .dark .backdrop-blur-fallback {

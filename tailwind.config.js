@@ -113,9 +113,9 @@ module.exports = {
       
       // Custom gradients
       backgroundImage: {
-        'gradient-immortal': 'linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)',
-        'gradient-celestial': 'linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%)',
-        'gradient-cultivation': 'linear-gradient(135deg, #059669 0%, #0891b2 25%, #2563eb 50%, #7c3aed 75%, #dc2626 100%)',
+        'gradient-tu-tien': 'linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #a78bfa 100%)',
+        'gradient-thien-dia': 'linear-gradient(135deg, #f8fafc 0%, #10b981 50%, #06b6d4 100%)',
+        'gradient-cultivation': 'linear-gradient(135deg, #64748b 0%, #059669 20%, #d97706 40%, #0891b2 60%, #7c3aed 80%, #ea580c 100%)',
         'shimmer-gradient': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)',
       },
       
@@ -154,51 +154,51 @@ module.exports = {
     function({ addUtilities, theme }) {
       const newUtilities = {
         // Cultivation level indicators
-        '.cultivation-qi': {
-          background: theme('colors.cultivation.qi'),
+        '.cultivation-luyen-khi': {
+          background: theme('colors.cultivation.luyen-khi'),
           color: 'white',
         },
-        '.cultivation-foundation': {
-          background: theme('colors.cultivation.foundation'),
+        '.cultivation-truc-co': {
+          background: theme('colors.cultivation.truc-co'),
           color: 'white',
         },
-        '.cultivation-golden': {
-          background: theme('colors.cultivation.golden'),
+        '.cultivation-kim-dan': {
+          background: theme('colors.cultivation.kim-dan'),
           color: 'white',
         },
-        '.cultivation-nascent': {
-          background: theme('colors.cultivation.nascent'),
+        '.cultivation-nguyen-anh': {
+          background: theme('colors.cultivation.nguyen-anh'),
           color: 'white',
         },
-        '.cultivation-spirit': {
-          background: theme('colors.cultivation.spirit'),
+        '.cultivation-hoa-than': {
+          background: theme('colors.cultivation.hoa-than'),
           color: 'white',
         },
-        '.cultivation-great': {
-          background: theme('colors.cultivation.great'),
+        '.cultivation-dai-thua': {
+          background: theme('colors.cultivation.dai-thua'),
           color: 'white',
         },
         
         // Glow effects
-        '.glow-emerald': {
-          boxShadow: '0 0 20px rgba(34, 197, 94, 0.5)',
+        '.glow-ngoc-thuy': {
+          boxShadow: '0 0 20px rgba(16, 185, 129, 0.5)',
         },
-        '.glow-cyan': {
+        '.glow-thien-thanh': {
           boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)',
         },
-        '.glow-gold': {
+        '.glow-kim-huy': {
           boxShadow: '0 0 20px rgba(245, 158, 11, 0.5)',
         },
         
         // Text gradients
-        '.text-gradient-immortal': {
-          background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%)',
+        '.text-gradient-tu-tien': {
+          background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #a78bfa 100%)',
           '-webkit-background-clip': 'text',
           '-webkit-text-fill-color': 'transparent',
           'background-clip': 'text',
         },
-        '.text-gradient-celestial': {
-          background: 'linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%)',
+        '.text-gradient-thien-dia': {
+          background: 'linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #a78bfa 100%)',
           '-webkit-background-clip': 'text',
           '-webkit-text-fill-color': 'transparent',
           'background-clip': 'text',
