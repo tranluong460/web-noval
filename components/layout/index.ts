@@ -10,3 +10,6 @@ export { default as UserFooter } from './UserFooter';
 export { default as UserHeader } from './UserHeader';
 export { default as UserSidebar } from './UserSidebar';
 
+// Export types
+export type { HeaderProps, User, MenuItem, DropdownItem, SearchResult } from './types';
+

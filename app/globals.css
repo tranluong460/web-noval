@@ -1,1 +1,220 @@
 @import "tailwindcss";
+
+/* Custom CSS cho animations và effects đặc biệt */
+
+/* Smooth scrolling cho toàn bộ trang */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar cho webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-emerald-300 dark:bg-cyan-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-emerald-400 dark:bg-cyan-500;
+}
+
+/* Dropdown animation keyframes */
+@keyframes dropdownFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Glow pulse animation cho search bar */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.8), 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+}
+
+/* Float animation cho logo */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Shimmer effect cho loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Custom focus styles cho accessibility */
+.focus-visible:focus-visible {
+  @apply outline-none ring-2 ring-emerald-500 ring-offset-2 dark:ring-cyan-400 dark:ring-offset-slate-900;
+}
+
+/* Smooth transitions cho theme switching */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Custom gradient backgrounds */
+.bg-immortal-gradient {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
+}
+
+.bg-celestial-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 50%, #8b5cf6 100%);
+}
+
+.bg-cultivation-gradient {
+  background: linear-gradient(135deg, #059669 0%, #0891b2 25%, #2563eb 50%, #7c3aed 75%, #dc2626 100%);
+}
+
+/* Text selection colors */
+::selection {
+  @apply bg-emerald-200 text-emerald-900;
+}
+
+::-moz-selection {
+  @apply bg-emerald-200 text-emerald-900;
+}
+
+/* Dark mode text selection */
+.dark ::selection {
+  @apply bg-cyan-800 text-cyan-100;
+}
+
+.dark ::-moz-selection {
+  @apply bg-cyan-800 text-cyan-100;
+}
+
+/* Loading spinner animation */
+.animate-spin-slow {
+  animation: spin 2s linear infinite;
+}
+
+/* Backdrop blur fallback */
+.backdrop-blur-fallback {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .backdrop-blur-fallback {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Mobile menu slide animation */
+.mobile-menu-enter {
+  transform: translateX(100%);
+}
+
+.mobile-menu-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease-out;
+}
+
+.mobile-menu-exit {
+  transform: translateX(0);
+}
+
+.mobile-menu-exit-active {
+  transform: translateX(100%);
+  transition: transform 300ms ease-in;
+}
+
+/* Cultivation level badge styles */
+.cultivation-badge {
+  @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  background: linear-gradient(135deg, var(--cultivation-from), var(--cultivation-to));
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* VIP crown glow effect */
+.vip-crown {
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.6));
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Search bar glow effect khi focus */
+.search-glow:focus-within {
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+/* Hover effects cho menu items */
+.menu-item-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.menu-item-hover:hover::before {
+  left: 100%;
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-r {
+    background: solid !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
