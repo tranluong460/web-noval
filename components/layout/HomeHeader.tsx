@@ -16,21 +16,21 @@ export default function HomeHeader() {
     }, []);
 
     const cultivationRealms = [
-        { name: 'Luyện Khí', slug: 'luyen-khi', desc: 'Cảnh giới cơ bản', icon: '🌬️', color: 'from-cyan-400 to-blue-500' },
-        { name: 'Trúc Cơ', slug: 'truc-co', desc: 'Xây dựng nền tảng', icon: '🏔️', color: 'from-green-400 to-emerald-500' },
-        { name: 'Kim Đan', slug: 'kim-dan', desc: 'Kết tụ kim đan', icon: '⚡', color: 'from-yellow-400 to-orange-500' },
-        { name: 'Nguyên Anh', slug: 'nguyen-anh', desc: 'Hình thành nguyên anh', icon: '👶', color: 'from-purple-400 to-pink-500' },
-        { name: 'Hóa Thần', slug: 'hoa-than', desc: 'Biến hóa thần thức', icon: '🔥', color: 'from-red-400 to-rose-500' },
-        { name: 'Hợp Thể', slug: 'hop-the', desc: 'Hợp nhất thể chất', icon: '⭐', color: 'from-indigo-400 to-purple-500' },
+        { name: 'Luyện Khí', slug: 'luyen-khi', desc: 'Cấp cơ bản', icon: '🌬️', color: 'from-cyan-400 to-blue-500' },
+        { name: 'Trúc Cơ', slug: 'truc-co', desc: 'Xây nền tảng', icon: '🏔️', color: 'from-green-400 to-emerald-500' },
+        { name: 'Kim Đan', slug: 'kim-dan', desc: 'Kết kim đan', icon: '⚡', color: 'from-yellow-400 to-orange-500' },
+        { name: 'Nguyên Anh', slug: 'nguyen-anh', desc: 'Tạo nguyên anh', icon: '👶', color: 'from-purple-400 to-pink-500' },
+        { name: 'Hóa Thần', slug: 'hoa-than', desc: 'Hóa thần thức', icon: '🔥', color: 'from-red-400 to-rose-500' },
+        { name: 'Hợp Thể', slug: 'hop-the', desc: 'Hợp nhất thể', icon: '⭐', color: 'from-indigo-400 to-purple-500' },
         { name: 'Đại Thừa', slug: 'dai-thua', desc: 'Đạt đại thành', icon: '🌟', color: 'from-amber-400 to-yellow-500' },
-        { name: 'Độ Kiếp', slug: 'do-kiep', desc: 'Vượt qua thiên kiếp', icon: '⚡', color: 'from-violet-400 to-purple-600' }
+        { name: 'Độ Kiếp', slug: 'do-kiep', desc: 'Vượt thiên kiếp', icon: '⚡', color: 'from-violet-400 to-purple-600' }
     ];
 
     const heavenlyRankings = [
-        { name: 'Thiên Bảng', slug: 'thien-bang', desc: 'Bảng xếp hạng thiên giới', icon: '☀️', color: 'text-yellow-400' },
-        { name: 'Địa Bảng', slug: 'dia-bang', desc: 'Bảng xếp hạng địa giới', icon: '🌍', color: 'text-green-400' },
-        { name: 'Nhân Bảng', slug: 'nhan-bang', desc: 'Bảng xếp hạng nhân giới', icon: '👥', color: 'text-blue-400' },
-        { name: 'Tiên Bảng', slug: 'tien-bang', desc: 'Bảng xếp hạng tiên giới', icon: '✨', color: 'text-purple-400' }
+        { name: 'Thiên Bảng', slug: 'thien-bang', desc: 'Top thiên giới', icon: '☀️', color: 'text-yellow-400' },
+        { name: 'Địa Bảng', slug: 'dia-bang', desc: 'Top địa giới', icon: '🌍', color: 'text-green-400' },
+        { name: 'Nhân Bảng', slug: 'nhan-bang', desc: 'Top nhân giới', icon: '👥', color: 'text-blue-400' },
+        { name: 'Tiên Bảng', slug: 'tien-bang', desc: 'Top tiên giới', icon: '✨', color: 'text-purple-400' }
     ];
 
     return (
@@ -65,9 +65,9 @@ export default function HomeHeader() {
                         </div>
                         <div className="hidden md:block">
                             <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg tracking-wider">
-                                Tu Tiên Vấn Đạo
+                                Tu Tiên
                             </h1>
-                            <p className="text-sm text-cyan-200/80 tracking-[0.3em] font-light">Nghịch Thiên Cải Mệnh · Trường Sinh Bất Lão</p>
+                            <p className="text-sm text-cyan-200/80 tracking-[0.3em] font-light">Nghịch Thiên · Trường Sinh</p>
                         </div>
                     </Link>
 
@@ -81,9 +81,9 @@ export default function HomeHeader() {
                         >
                             <button className="cultivation-nav-item group">
                                 <span className="chinese-text flex items-center">
-                                    <span className="mr-2 text-xl">🌟</span>Cảnh Giới
+                                    <span className="mr-2 text-xl">🌟</span>Tu Luyện
                                 </span>
-                                <span className="english-text">Tu Luyện</span>
+                                <span className="english-text">Cảnh Giới</span>
                                 <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
@@ -121,9 +121,9 @@ export default function HomeHeader() {
                         >
                             <button className="cultivation-nav-item group">
                                 <span className="chinese-text flex items-center">
-                                    <span className="mr-2 text-xl">🏆</span>Bảng Xếp Hạng
+                                    <span className="mr-2 text-xl">🏆</span>Xếp Hạng
                                 </span>
-                                <span className="english-text">Thiên Bảng</span>
+                                <span className="english-text">Top</span>
                                 <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                     <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                                 </svg>
@@ -159,17 +159,17 @@ export default function HomeHeader() {
                         {/* Immortal Masters */}
                         <Link href="/tac-gia" className="cultivation-nav-item group">
                             <span className="chinese-text flex items-center">
-                                <span className="mr-2 text-xl">🧙‍♂️</span>Tiên Sư
+                                <span className="mr-2 text-xl">🧙‍♂️</span>Tác Giả
                             </span>
-                            <span className="english-text">Cao Thủ</span>
+                            <span className="english-text">Authors</span>
                         </Link>
 
                         {/* Spiritual Search */}
                         <Link href="/tim-kiem" className="cultivation-nav-item group">
                             <span className="chinese-text flex items-center">
-                                <span className="mr-2 text-xl">🔮</span>Tìm Kiếm
+                                <span className="mr-2 text-xl">🔮</span>Tìm
                             </span>
-                            <span className="english-text">Tầm Đạo</span>
+                            <span className="english-text">Search</span>
                         </Link>
                     </nav>
 
@@ -178,7 +178,7 @@ export default function HomeHeader() {
                         <div className="relative group">
                             <input
                                 type="text"
-                                placeholder="Tìm kiếm con đường tu tiên..."
+                                placeholder="Tìm truyện tu tiên..."
                                 className="w-80 px-6 py-4 pl-14 bg-gradient-to-r from-slate-800/80 via-indigo-900/80 to-slate-800/80 border-2 border-cyan-400/30 rounded-full text-white placeholder-cyan-200/60 focus:outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-400/20 focus:shadow-2xl focus:shadow-cyan-400/30 transition-all duration-500 backdrop-blur-md group-hover:border-purple-400/50"
                             />
                             <div className="absolute left-5 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full flex items-center justify-center">
@@ -204,7 +204,7 @@ export default function HomeHeader() {
                             href="/auth/dang-ky"
                             className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-full hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 transition-all duration-500 shadow-2xl hover:shadow-cyan-400/40 hover:scale-105 border-2 border-cyan-400/30 relative overflow-hidden group"
                         >
-                            <span className="relative z-10">Bái Sư Tu Tiên</span>
+                            <span className="relative z-10">Đăng Ký</span>
                             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         </Link>
                     </div>
